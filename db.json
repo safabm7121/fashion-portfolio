@@ -1,0 +1,204 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "ONS JABEUR COMMISSION",
+      "slug": "ons-jabeur-commission",
+      "description": "Custom dress designed for Tunisian tennis champion Ons Jabeur. A statement piece blending athletic elegance with avant-garde silhouettes.",
+      "fullDescription": "Commissioned by tennis star Ons Jabeur, this custom dress was designed to reflect her powerful presence both on and off the court. The piece combines structural elements with fluid movement, using premium Italian fabrics and hand-finished details. The design process involved multiple fittings and material tests to achieve the perfect balance between comfort and dramatic effect. Featured in several fashion publications, this piece represents the intersection of sport and high fashion.",
+      "coverImage": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
+          "caption": "Front view - Architectural draping"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
+          "caption": "Back detail - Sculptural silhouette"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format",
+          "caption": "Movement study - Fluid construction"
+        },
+        {
+          "type": "video",
+          "url": "https://example.com/video1.mp4",
+          "caption": "Behind the scenes - Fitting process"
+        },
+        {
+          "type": "gif",
+          "url": "https://example.com/animation.gif",
+          "caption": "Design evolution"
+        }
+      ],
+      "category": "Commission",
+      "year": "2024",
+      "materials": ["Italian Silk", "French Lace", "Crystal Embellishments"],
+      "client": "Ons Jabeur",
+      "role": "Lead Designer"
+    },
+    {
+      "id": 2,
+      "title": "DRAG COSTUME - NATIONAL CHAMPION",
+      "slug": "drag-costume-champion",
+      "description": "First Prize winning costume design for the National Drag Competition. A celebration of queer artistry and theatrical fashion.",
+      "fullDescription": "This award-winning costume was created for the National Drag Competition, where it won First Prize. The design explores themes of transformation and identity through exaggerated silhouettes, hand-crafted details, and theatrical elements. Every piece was hand-stitched and embellished over a 3-month period, incorporating over 500 hours of labor. The costume features custom-made accessories, LED elements, and a transformative reveal mechanism.",
+      "coverImage": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format",
+          "caption": "Performance shot - Winning look"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format",
+          "caption": "Detail - Hand-embellished elements"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "video",
+          "url": "https://example.com/drag-performance.mp4",
+          "caption": "Live performance - Competition night"
+        }
+      ],
+      "category": "Costume Design",
+      "year": "2024",
+      "materials": ["Custom Sequins", "Feathers", "LED Lights", "Stretch Mesh"],
+      "client": "National Drag Competition",
+      "role": "Costume Designer"
+    },
+    {
+      "id": 3,
+      "title": "CINDERELLA - MENSWEAR COSTUMES",
+      "slug": "cinderella-menswear",
+      "description": "Theatrical menswear costumes for the production of Cinderella. Reimagining classic characters through contemporary silhouettes.",
+      "fullDescription": "For this theatrical production of Cinderella, I designed and constructed all menswear costumes, reimagining traditional characters through a contemporary lens. The collection features tailored suits with deconstructed elements, period-inspired pieces with modern twists, and character-driven designs that enhance storytelling. Each costume was built for durability and quick changes while maintaining visual impact under stage lighting.",
+      "coverImage": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format",
+          "caption": "Prince's costume - Final look"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
+          "caption": "Character sketches - Design process"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
+          "caption": "Backstage - Cast in costume"
+        },
+        {
+          "type": "gif",
+          "url": "https://example.com/design-process.gif",
+          "caption": "From sketch to final garment"
+        }
+      ],
+      "category": "Theatrical Costume",
+      "year": "2024",
+      "materials": ["Wool Suiting", "Silk Satin", "Custom Buttons"],
+      "client": "Cinderella Theatrical Production",
+      "role": "Menswear Costume Designer"
+    },
+    {
+      "id": 4,
+      "title": "OFLA TURKI - BESTSELLING COLLECTIONS",
+      "slug": "ofla-turki-bestsellers",
+      "description": "Multiple top-selling collections developed during my tenure at Ofla Turki. Commercial success meets creative innovation.",
+      "fullDescription": "During my time at Ofla Turki, I led the development of multiple best-selling collections that became commercial successes. These collections balanced creative innovation with market demands, resulting in pieces that resonated with customers while pushing design boundaries. The process involved trend research, material sourcing, prototyping, and production oversight from concept to final garment.",
+      "coverImage": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format",
+          "caption": "Spring/Summer Collection 2024"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
+          "caption": "Campaign shoot - Bestselling pieces"
+        },
+        {
+          "type": "video",
+          "url": "https://example.com/collection-showcase.mp4",
+          "caption": "Collection showcase video"
+        }
+      ],
+      "category": "Commercial Collection",
+      "year": "2023-2024",
+      "materials": ["Various - See collection details"],
+      "client": "Ofla Turki",
+      "role": "Creative Designer"
+    },
+    {
+      "id": 5,
+      "title": "WEDDING DRESSES - MAISON OWNER",
+      "slug": "wedding-dresses-commission",
+      "description": "Custom wedding dresses designed for the Maison owner's daughters. Heirloom-quality pieces with sentimental value.",
+      "fullDescription": "This intimate commission involved creating custom wedding dresses for the Maison owner's two daughters. Each dress was designed to reflect the individual's personality while maintaining family heritage elements. The process was deeply collaborative, involving multiple fittings, fabric sourcing from Italy and France, and hand-finishing techniques that took months to complete. These heirloom pieces represent the pinneration of couture craftsmanship.",
+      "coverImage": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format",
+          "caption": "Dress 1 - Classic elegance"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format",
+          "caption": "Dress 2 - Modern romance"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
+          "caption": "Detail work - Hand embroidery"
+        }
+      ],
+      "category": "Couture",
+      "year": "2024",
+      "materials": ["French Lace", "Italian Silk", "Hand Beading"],
+      "client": "Private Commission",
+      "role": "Couture Designer"
+    },
+    {
+      "id": 6,
+      "title": "LA FLAMME - ILLUSTRATION SERIES",
+      "slug": "la-flamme-illustrations",
+      "description": "Concept illustration series created for La Flamme. Exploring the intersection of fashion illustration and storytelling.",
+      "fullDescription": "During my time as Illustrator & Concept Designer at La Flamme, I created a series of concept illustrations that merged fashion with narrative art. These pieces explored themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials.",
+      "coverImage": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&auto=format",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
+          "caption": "Series 1 - Movement study"
+        },
+        {
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
+          "caption": "Series 2 - Texture exploration"
+        },
+        {
+          "type": "gif",
+          "url": "https://example.com/illustration-process.gif",
+          "caption": "Digital illustration process"
+        }
+      ],
+      "category": "Illustration",
+      "year": "2024-2025",
+      "materials": ["Digital Media", "Mixed Media"],
+      "client": "La Flamme",
+      "role": "Illustrator & Concept Designer"
+    }
+  ]
+}

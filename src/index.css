@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Major+Mono+Display&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #000000;
+  }
+
+  body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Hide default cursor, show custom cursor only on desktop */
+  @media (min-width: 768px) {
+    * {
+      cursor: none;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient-white {
+    background: linear-gradient(135deg, #FFFFFF 0%, #666666 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-glow-white {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .border-glow-white {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+}
