@@ -7,8 +7,9 @@ import Cursor from './components/Cursor/Cursor'
 function App() {
   return (
     <Router>
-      {/* Cursor is now global - works on all pages */}
+      {/* Cursor is global - works on all pages */}
       <Cursor />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:slug" element={<Project />} />
