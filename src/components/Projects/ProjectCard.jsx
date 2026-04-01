@@ -20,6 +20,9 @@ const ProjectCard = ({ project }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
+  // Check if mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
   return (
     <Link to={`/project/${project.slug}`}>
       <motion.div
@@ -41,16 +44,16 @@ const ProjectCard = ({ project }) => {
             }}
             transition={{ duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 md:opacity-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
-          {/* Title overlay - always visible on mobile when scrolled into view, hover on desktop */}
+          {/* Title overlay - appears on hover (desktop) OR when in view (mobile) */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ 
-              y: (isInView && window.innerWidth < 768) ? 0 : (isHovered ? 0 : 50),
-              opacity: (isInView && window.innerWidth < 768) ? 1 : (isHovered ? 1 : 0)
+              y: (isMobile && isInView) ? 0 : (isHovered ? 0 : 50),
+              opacity: (isMobile && isInView) ? 1 : (isHovered ? 1 : 0)
             }}
-            transition={{ duration: 0.4, delay: isInView ? 0.2 : 0 }}
+            transition={{ duration: 0.4 }}
             className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white"
           >
             <span className="text-white/60 text-[10px] md:text-xs tracking-wider uppercase border-l-2 border-white/40 pl-2">
