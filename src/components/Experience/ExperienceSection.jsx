@@ -62,40 +62,30 @@ const ExperienceSection = () => {
     }
   ]
 
-  // FASHION DESIGN SKILLS - First and most detailed
   const fashionDesignSkills = [
-    // Design & Conceptualization
     { category: "Design & Concept", skills: ["Conceptualization", "Illustration", "Moodboarding", "Color Theory", "Trend Forecasting", "Collection Development", "Brand Identity"] },
-    // Technical Construction
     { category: "Technical Construction", skills: ["Pattern Making (Manual & Digital)", "Draping", "Grading", "Sample Development", "Technical Flats", "Spec Sheets", "Fit Analysis"] },
-    // Garment Categories
     { category: "Garment Expertise", skills: ["Womenswear", "Menswear", "Lingerie", "Couture", "Ready-to-Wear", "Costume Design", "Theatrical Costumes"] },
-    // Textiles & Materials
     { category: "Textiles & Materials", skills: ["Textile Art", "Fabric Sourcing", "Sustainable Materials", "Embellishment Techniques", "Hand Embroidery", "Beading", "Laser Cutting"] },
-    // CAD & Digital
     { category: "CAD & Digital Design", skills: ["Lectra 2D", "Adobe Illustrator", "Photoshop", "Procreate", "Affinity Publisher", "Digital Flats", "Technical Drawing"] }
   ]
 
-  // JEWELRY DESIGN - Detailed
   const jewelrySkills = [
     { category: "Metal Smithing", skills: ["Brass Work", "Silver Work", "Soldering", "Annealing", "Forging", "Texturing", "Polishing"] },
     { category: "Stone Setting", skills: ["Bezel Setting", "Prong Setting", "Flush Setting", "Stone Selection", "Gemstone Knowledge"] },
     { category: "Fabrication", skills: ["Wax Carving", "Lost Wax Casting", "Chain Making", "Findings", "Finishing Techniques"] }
   ]
 
-  // VIDEOGRAPHY & MOTION GRAPHICS
   const videoSkills = [
     "Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Color Grading", "Motion Graphics", "Video Editing", "Sound Design", "Lookbook Production", "Campaign Videos", "Behind the Scenes", "Fashion Film"
   ]
 
-  // FULL STACK DEVELOPMENT
   const backendSkills = ["Node.js", "TypeScript", "Express.js", "REST APIs", "Socket.IO", "Microservice Architecture", "Clean Architecture", "JWT Authentication"]
   const databaseSkills = ["MongoDB", "PostgreSQL", "Mongoose", "Prisma", "Database Design", "Query Optimization"]
   const devopsSkills = ["Docker", "Jenkins", "Grafana", "Prometheus", "Git/GitHub", "Bitbucket", "Swagger UI", "CI/CD Pipelines"]
   const frontendSkills = ["React.js", "TypeScript", "Tailwind CSS", "Material UI", "Bootstrap", "Framer Motion", "Responsive Design", "State Management"]
   const methodologies = ["Agile/Scrum", "Daily Standups", "Sprint Planning", "Retrospectives", "Jira", "User Stories", "Task Estimation"]
 
-  // ADDITIONAL COMPETENCIES
   const additionalSkills = [
     "Photography", "Digital Marketing", "SEO", "Content Strategy", "Brand Development",
     "Critical Thinking", "Time Management", "Multitasking", "Team Leadership", 
@@ -111,9 +101,9 @@ const ExperienceSection = () => {
   ]
 
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-16 bg-secondary">
+    <section className="py-24 px-4 md:px-8 lg:px-16 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        {/* About Section */}
+        {/* About Section - text only, no background */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +172,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Education & Certifications */}
+        {/* Education & Certifications - CARDS with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +192,7 @@ const ExperienceSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/5 p-6 border border-white/10 hover:border-white/30 transition-colors"
+                className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-colors relative z-20"
               >
                 <h3 className="font-bold text-lg mb-1">{edu.degree}</h3>
                 <p className="text-white/60 text-sm mb-2">{edu.school}</p>
@@ -215,7 +205,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* FASHION DESIGN SKILLS - First and most prominent */}
+        {/* Fashion Design Skills - CARDS with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +219,7 @@ const ExperienceSection = () => {
           
           <div className="space-y-8">
             {fashionDesignSkills.map((category, idx) => (
-              <div key={idx}>
+              <div key={idx} className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
                 <h3 className="text-xl font-bold mb-4 text-white/80 border-l-2 border-white/40 pl-4">
                   {category.category}
                 </h3>
@@ -245,7 +235,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* JEWELRY DESIGN - Detailed */}
+        {/* Jewelry Design - CARDS with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -259,7 +249,7 @@ const ExperienceSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {jewelrySkills.map((category, idx) => (
-              <div key={idx} className="bg-white/5 p-6 border border-white/10">
+              <div key={idx} className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
                 <h3 className="text-lg font-bold mb-4 text-white/80">{category.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
@@ -273,7 +263,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* VIDEOGRAPHY & MOTION GRAPHICS */}
+        {/* Videography & Motion Graphics - CARD with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -285,16 +275,18 @@ const ExperienceSection = () => {
             Videography & Motion Graphics
           </h2>
           
-          <div className="flex flex-wrap gap-2">
-            {videoSkills.map((skill, i) => (
-              <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 text-sm hover:border-white/30 transition-colors">
-                {skill}
-              </span>
-            ))}
+          <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+            <div className="flex flex-wrap gap-2">
+              {videoSkills.map((skill, i) => (
+                <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 text-sm hover:border-white/30 transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
-        {/* FULL STACK DEVELOPMENT */}
+        {/* Full Stack Development - CARDS with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -307,7 +299,7 @@ const ExperienceSection = () => {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
+            <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
               <h3 className="text-xl font-bold mb-4 text-white/80">Backend</h3>
               <div className="flex flex-wrap gap-2 mb-6">
                 {backendSkills.map((skill, i) => (
@@ -330,7 +322,7 @@ const ExperienceSection = () => {
               </div>
             </div>
             
-            <div>
+            <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
               <h3 className="text-xl font-bold mb-4 text-white/80">Frontend</h3>
               <div className="flex flex-wrap gap-2 mb-6">
                 {frontendSkills.map((skill, i) => (
@@ -348,7 +340,7 @@ const ExperienceSection = () => {
           </div>
           
           {/* Final Project Highlight */}
-          <div className="mt-8 p-6 border border-white/20 bg-white/5">
+          <div className="mt-8 p-6 border border-white/20 bg-black/80 backdrop-blur-sm relative z-20">
             <h3 className="text-lg font-bold mb-2">Final Project: E-Commerce Platform for Voidstone Studio</h3>
             <p className="text-gray-400 text-sm">
               Developed a full microservice-based e-commerce platform for my fashion brand, combining my two passions. 
@@ -358,7 +350,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Additional Competencies */}
+        {/* Additional Competencies - CARD with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -370,16 +362,18 @@ const ExperienceSection = () => {
             Additional Competencies
           </h2>
           
-          <div className="flex flex-wrap gap-3">
-            {additionalSkills.map((skill, i) => (
-              <span key={i} className="px-4 py-2 border border-white/20 text-sm hover:border-white/60 transition-colors">
-                {skill}
-              </span>
-            ))}
+          <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+            <div className="flex flex-wrap gap-3">
+              {additionalSkills.map((skill, i) => (
+                <span key={i} className="px-4 py-2 border border-white/20 text-sm hover:border-white/60 transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
-        {/* Languages */}
+        {/* Languages - CARDS with z-20 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -398,7 +392,7 @@ const ExperienceSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white/5 p-4 border border-white/10 text-center hover:border-white/30 transition-colors"
+                className="bg-black/80 backdrop-blur-sm p-4 border border-white/10 text-center hover:border-white/30 transition-colors relative z-20"
               >
                 <div className="text-2xl mb-2">{lang.flag}</div>
                 <h3 className="font-bold">{lang.name}</h3>

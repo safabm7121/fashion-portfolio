@@ -29,7 +29,7 @@ const Cursor = () => {
   
   useEffect(() => {
     let lastTime = 0
-    const interval = 60 // milliseconds between trail particles (closer together)
+    const interval = 60
     
     const moveCursor = (e) => {
       const now = Date.now()
@@ -47,7 +47,7 @@ const Cursor = () => {
       const eyeY = Math.max(-12, Math.min(12, dy))
       setEyePosition({ x: eyeX, y: eyeY })
       
-      // Add trail particle at intervals (closer together)
+      // Add trail particle at intervals
       if (now - lastTime > interval) {
         const randomWord = trailWords[Math.floor(Math.random() * trailWords.length)]
         setTrail(prev => [...prev.slice(-25), { 
@@ -79,11 +79,11 @@ const Cursor = () => {
   
   return (
     <>
-      {/* Text Trail - follows cursor closely */}
-      {trail.map((point, index) => (
+      {/* Text Trail - stays on top */}
+      {trail.map((point) => (
         <motion.div
           key={point.id}
-          className="fixed pointer-events-none z-[9998] hidden md:block"
+          className="fixed pointer-events-none z-50 hidden md:block"
           style={{
             left: point.x,
             top: point.y,
@@ -101,15 +101,18 @@ const Cursor = () => {
         </motion.div>
       ))}
       
-      {/* Fixed Eyes - CENTER of screen, larger */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9997] hidden md:block">
+      {/* Fixed Eyes - z-10 so they appear OVER hero (which has lower z-index) but UNDER cards (which have higher z-index) */}
+      <div 
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block pointer-events-none"
+        style={{ pointerEvents: 'none' }}
+      >
         <div className="relative w-20 h-20">
           {/* Face/Eye Background - subtle circle */}
-          <div className="absolute inset-0 border border-white/30 rounded-full" />
+          <div className="absolute inset-0 border border-white/20 rounded-full backdrop-blur-sm" />
           
-          {/* Left Eye - larger */}
+          {/* Left Eye */}
           <div className="absolute top-1/3 left-1/4 w-5 h-5">
-            <div className="w-full h-full bg-white rounded-full" />
+            <div className="w-full h-full bg-white/90 rounded-full" />
             <div 
               className="absolute w-2.5 h-2.5 bg-black rounded-full transition-all duration-150"
               style={{ 
@@ -120,9 +123,9 @@ const Cursor = () => {
             />
           </div>
           
-          {/* Right Eye - larger */}
+          {/* Right Eye */}
           <div className="absolute top-1/3 right-1/4 w-5 h-5">
-            <div className="w-full h-full bg-white rounded-full" />
+            <div className="w-full h-full bg-white/90 rounded-full" />
             <div 
               className="absolute w-2.5 h-2.5 bg-black rounded-full transition-all duration-150"
               style={{ 
@@ -133,16 +136,16 @@ const Cursor = () => {
             />
           </div>
           
-          {/* Optional: subtle mouth/pupil accent */}
+          {/* Subtle mouth accent */}
           <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-4 h-1">
             <div className="w-full h-full border-b border-white/20 rounded-full" />
           </div>
         </div>
       </div>
       
-      {/* Tiny precision dot for cursor (optional, very subtle) */}
+      {/* Tiny precision dot for cursor - stays on top */}
       <motion.div
-        className="fixed top-0 left-0 w-1 h-1 pointer-events-none z-[9999] bg-white/60 rounded-full hidden md:block"
+        className="fixed top-0 left-0 w-1 h-1 pointer-events-none z-50 bg-white/60 rounded-full hidden md:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,

@@ -30,7 +30,7 @@ const Project = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Header - responsive padding */}
+      {/* Header - stays on top */}
       <div className="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 bg-black/90 backdrop-blur-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
           <Link 
@@ -54,15 +54,15 @@ const Project = () => {
         </div>
       </div>
 
-      {/* Project Content - responsive spacing */}
+      {/* Project Content */}
       <div className="pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-8">
         
-        {/* Hero Image - responsive height */}
+        {/* Hero Image - lower z-index for image container */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto mb-8 md:mb-12"
+          className="max-w-7xl mx-auto mb-8 md:mb-12 relative z-0"
         >
           <img 
             src={project.coverImage} 
@@ -71,8 +71,8 @@ const Project = () => {
           />
         </motion.div>
 
-        <div className="max-w-7xl mx-auto">
-          {/* Project Header - responsive text sizes */}
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Project Header - text content above eyes */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ const Project = () => {
             </p>
           </motion.div>
 
-          {/* Project Details Grid - responsive columns */}
+          {/* Project Details Grid - text content above eyes */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
             <div className="bg-white/5 p-4 md:p-6 border border-white/10">
               <h3 className="text-white/60 text-xs md:text-sm tracking-wider mb-2 md:mb-4">CLIENT</h3>
@@ -109,9 +109,9 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Gallery - responsive spacing */}
+          {/* Gallery images - each image has lower z-index so eyes peek through */}
           <div className="mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4">
+            <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4 relative z-10">
               PROJECT GALLERY
             </h2>
             <div className="space-y-8 md:space-y-12">
@@ -124,29 +124,31 @@ const Project = () => {
                   transition={{ delay: index * 0.1 }}
                   className="space-y-3 md:space-y-4"
                 >
-                  {item.type === 'video' ? (
-                    <video 
-                      src={item.url}
-                      controls
-                      className="w-full rounded-none"
-                      poster={item.poster}
-                    />
-                  ) : item.type === 'gif' ? (
-                    <img 
-                      src={item.url}
-                      alt={item.caption}
-                      className="w-full"
-                    />
-                  ) : (
-                    <img 
-                      src={item.url}
-                      alt={item.caption}
-                      className="w-full cursor-pointer hover:opacity-90 transition-opacity"
-                      onClick={() => window.open(item.url, '_blank')}
-                    />
-                  )}
+                  <div className="relative z-0">
+                    {item.type === 'video' ? (
+                      <video 
+                        src={item.url}
+                        controls
+                        className="w-full rounded-none"
+                        poster={item.poster}
+                      />
+                    ) : item.type === 'gif' ? (
+                      <img 
+                        src={item.url}
+                        alt={item.caption}
+                        className="w-full"
+                      />
+                    ) : (
+                      <img 
+                        src={item.url}
+                        alt={item.caption}
+                        className="w-full cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => window.open(item.url, '_blank')}
+                      />
+                    )}
+                  </div>
                   {item.caption && (
-                    <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+                    <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide relative z-10">
                       {item.caption}
                     </p>
                   )}
@@ -155,8 +157,8 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Contact CTA - responsive padding */}
-          <div className="border-t border-white/20 pt-8 md:pt-12 text-center">
+          {/* Contact CTA - text content above eyes */}
+          <div className="border-t border-white/20 pt-8 md:pt-12 text-center relative z-10">
             <h3 className="text-xl md:text-2xl font-display mb-3 md:mb-4">Interested in this project?</h3>
             <p className="text-gray-400 text-sm md:text-base mb-6 md:mb-8">Let's collaborate on your next creative endeavor</p>
             <Link to="/#contact">

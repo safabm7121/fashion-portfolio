@@ -18,7 +18,7 @@ const ProjectsGrid = () => {
   const projects = projectsData.projects
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-background">
+    <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-background"> {/* Removed relative z-20 */}
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-white/60 text-xs md:text-sm tracking-[0.3em] uppercase mb-3 md:mb-4 block border-l-2 border-white/40 pl-3 md:pl-4 mx-auto w-fit">

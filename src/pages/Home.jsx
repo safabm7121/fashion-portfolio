@@ -4,7 +4,6 @@ import Hero from '../components/Hero/Hero'
 import ProjectsGrid from '../components/Projects/ProjectsGrid'
 import ExperienceSection from '../components/Experience/ExperienceSection'
 import Contact from '../components/Contact/Contact'
-// Remove Cursor import - it's now in App.jsx
 
 function Home() {
   const projectsRef = useRef(null)

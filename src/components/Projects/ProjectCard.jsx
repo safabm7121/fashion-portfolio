@@ -16,14 +16,12 @@ const itemVariants = {
 }
 
 const ProjectCard = ({ project }) => {
-  const [isActive, setIsActive] = useState(false) // Changed from isHovered
+  const [isActive, setIsActive] = useState(false)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, amount: 0.5 }) // once: false so it triggers when scrolling in AND out
+  const isInView = useInView(ref, { once: false, amount: 0.5 })
 
-  // Check if mobile
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
-  // Update active state based on scroll position on mobile
   useEffect(() => {
     if (isMobile) {
       setIsActive(isInView)
@@ -37,7 +35,7 @@ const ProjectCard = ({ project }) => {
         variants={itemVariants}
         initial="hidden"
         animate="visible"
-        className="group relative cursor-pointer interactive block"
+        className="group relative cursor-pointer interactive block z-20" // Added z-20
         onMouseEnter={() => !isMobile && setIsActive(true)}
         onMouseLeave={() => !isMobile && setIsActive(false)}
       >
@@ -53,7 +51,6 @@ const ProjectCard = ({ project }) => {
             transition={{ duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] }}
           />
           
-          {/* Gradient overlay - appears when active */}
           <motion.div 
             className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
             initial={{ opacity: 0 }}
@@ -61,7 +58,6 @@ const ProjectCard = ({ project }) => {
             transition={{ duration: 0.5 }}
           />
           
-          {/* Title overlay - slides up when active */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ 
