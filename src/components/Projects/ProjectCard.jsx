@@ -45,14 +45,20 @@ const ProjectCard = ({ project }) => {
               opacity: isHovered ? 1 : 0,
             }}
             transition={{ duration: 0.4 }}
-            className="absolute bottom-0 left-0 right-0 p-6 text-white"
+            className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white"
           >
-            <span className="text-white/60 text-xs tracking-wider uppercase border-l-2 border-white/40 pl-2">
+            <span className="text-white/60 text-[10px] md:text-xs tracking-wider uppercase border-l-2 border-white/40 pl-2">
               {project.category}
             </span>
-            <h3 className="text-xl font-bold mt-2 font-display">{project.title}</h3>
-            <p className="text-sm text-gray-400 mt-1 line-clamp-2">{project.description}</p>
-            <span className="inline-block mt-3 text-xs text-white/60">{project.year}</span>
+            <h3 className="text-base md:text-xl font-bold mt-1 md:mt-2 font-display break-words">
+              {project.title}
+            </h3>
+            <p className="text-xs md:text-sm text-gray-400 mt-1 line-clamp-2 hidden md:block">
+              {project.description}
+            </p>
+            <span className="inline-block mt-2 md:mt-3 text-[10px] md:text-xs text-white/60">
+              {project.year}
+            </span>
           </motion.div>
         </div>
       </motion.div>
