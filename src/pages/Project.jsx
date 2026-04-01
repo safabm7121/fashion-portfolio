@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import projectsData from '../../db.json'
-// No cursor import needed - it's in App.jsx
+
 
 const Project = () => {
   const { slug } = useParams()
