@@ -29,7 +29,7 @@ const Hero = ({ scrollToProjects }) => {
   const scrollingText = "✦ FASHION DESIGNER ✦ FULL STACK DEVELOPER ✦ COSTUME DESIGNER ✦ JEWELRY DESIGNER ✦ "
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Soft motion background */}
       <AnimatedBackground />
       
