@@ -6,11 +6,11 @@
       "slug": "2026-COLLECTION",
       "description": "The link between the human body and the doll is explored in this collection, which features exaggerated silhouettes, deconstructed elements, and a mix of hard and soft materials. The collection was inspired by themes of identity, transformation, and the uncanny.",
       "fullDescription": "the doll acts as a potent representation of a human. The power ascribed to the Doll can be seen as an example of how a physical image can be imbued with abstract meaning and Power, bluring the line between the object and the person it represents.",
-      "coverImage": "/projects/project-1/untitled_artwork.jpg",
+      "coverImage": "/public/projects/project-1/untitled_artwork.jpg",
       "gallery": [
         {
           "type": "image",
-          "url": "/projects/project-1/untitled_artwork.jpg",
+          "url": "/public/projects/project-1/untitled_artwork.jpg",
           "caption": "COVER IMAGE - Fractured Doll Collection 2026"
         },
         {
