@@ -207,11 +207,11 @@
           "url": "/public/projects/project-3/IMG16.jpg",
           "caption": "Behind the scenes - Construction process"
         },
-         {
-    "type": "video",
-    "url": "/public/projects/project-3/final (1).mp4",
-    "caption": "Full collection runway video"
-  }
+       {
+  "type": "video",
+  "url": "https://drive.google.com/file/d/1NqByYo9qGPZERV1Q22loGwWlxVZTUnBW/preview",
+  "caption": "Skyward journey - Full collection"
+}
  
     
       ],
@@ -275,11 +275,11 @@
           "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
           "caption": "Campaign shoot - Bestselling pieces"
         },
-        {
-          "type": "video",
-          "url": "https://youtu.be/Gyu13WNUsCA",
-          "caption": "Collection showcase video"
-        }
+       {
+  "type": "video",
+  "url": "https://youtu.be/Gyu13WNUsCA?si=vBZ2hmllM61tWBhv",
+  "caption": "Collection showcase video"
+}
       ],
       "category": "Commercial Collection",
       "year": "2023-2024",

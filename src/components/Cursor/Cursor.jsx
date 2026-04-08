@@ -143,12 +143,12 @@ const Cursor = () => {
         </div>
       </div>
       
-      {/* Tiny precision dot for cursor - stays on top */}
+      {/* Tiny precision dot for cursor - NO BOUNCE, follows instantly */}
       <motion.div
         className="fixed top-0 left-0 w-1 h-1 pointer-events-none z-50 bg-white/60 rounded-full hidden md:block"
         style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
+          x: cursorX,
+          y: cursorY,
         }}
       />
     </>

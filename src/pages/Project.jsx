@@ -50,184 +50,217 @@ const Project = () => {
 
   // Render appropriate content based on file type
   const renderGalleryItem = (item, index) => {
-    const fileType = getFileType(item.url)
+  // FIRST: Check if it's a video (ANY URL that contains video indicators)
+  const isAnyVideo = item.url && (
+    item.url.includes('.mp4') ||
+    item.url.includes('.webm') ||
+    item.url.includes('.mov') ||
+    item.url.includes('.avi') ||
+    item.url.includes('youtube.com') ||
+    item.url.includes('youtu.be') ||
+    item.url.includes('vimeo.com') ||
+    item.url.includes('drive.google.com') ||
+    item.url.includes('dropbox.com') ||
+    item.url.includes('cloudinary.com') ||
+    item.url.includes('screenpal.com') ||
+    item.url.includes('streamable.com') ||
+    // Catch ANY link that might be a video
+    (item.type === 'video')
+  );
+  
+  // If it's a video, render it
+  if (isAnyVideo) {
+    // For direct video files, use video tag
+    const isDirectVideo = item.url.match(/\.(mp4|webm|mov|avi)(\?|$)/i);
     
-    switch (fileType) {
-      case 'image':
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0">
-              <img 
-                src={item.url}
-                alt={item.caption}
-                className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => window.open(item.url, '_blank')}
-              />
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide relative z-10">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-        
-      case 'video':
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0">
-              <video 
-                src={item.url}
-                controls
-                className="w-full rounded-lg"
-                poster={item.poster}
-              />
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-        
-      case 'model3d':
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
-              <div className="mb-4">
-                <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <p className="text-white/60 text-sm mb-4">3D Model Available</p>
-              <a 
-                href={item.url}
-                download
-                className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
-              >
-                Download 3D Model ({item.url.split('.').pop()?.toUpperCase()})
-              </a>
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-        
-      case 'audio':
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0 bg-black/40 rounded-lg p-6">
-              <audio 
-                src={item.url}
-                controls
-                className="w-full"
-              />
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-        
-      case 'pdf':
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
-              <div className="mb-4">
-                <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <a 
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
-              >
-                View PDF Document
-              </a>
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-        
-      default:
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: Math.min(index * 0.1, 0.5) }}
-            className="space-y-3 md:space-y-4"
-          >
-            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center">
-              <a 
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
-              >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                <span>Download File: {item.url.split('/').pop()}</span>
-              </a>
-            </div>
-            {item.caption && (
-              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
-                {item.caption}
-              </p>
-            )}
-          </motion.div>
-        )
-    }
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: Math.min(index * 0.1, 0.5) }}
+        className="space-y-3 md:space-y-4"
+      >
+        <div className="relative z-0">
+          {isDirectVideo ? (
+            <video 
+              src={item.url}
+              controls
+              className="w-full rounded-lg"
+              poster={item.poster}
+            />
+          ) : (
+            <iframe
+              src={item.url}
+              className="w-full aspect-video rounded-lg"
+              allowFullScreen
+              title={item.caption || 'Video'}
+            />
+          )}
+        </div>
+        {item.caption && (
+          <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
+            {item.caption}
+          </p>
+        )}
+      </motion.div>
+    );
   }
+  
+  // THEN check file type for non-video items
+  const fileType = getFileType(item.url)
+  
+  switch (fileType) {
+    case 'image':
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: Math.min(index * 0.1, 0.5) }}
+          className="space-y-3 md:space-y-4"
+        >
+          <div className="relative z-0">
+            <img 
+              src={item.url}
+              alt={item.caption}
+              className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => window.open(item.url, '_blank')}
+            />
+          </div>
+          {item.caption && (
+            <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide relative z-10">
+              {item.caption}
+            </p>
+          )}
+        </motion.div>
+      )
+      
+    case 'model3d':
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: Math.min(index * 0.1, 0.5) }}
+          className="space-y-3 md:space-y-4"
+        >
+          <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
+            <div className="mb-4">
+              <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <p className="text-white/60 text-sm mb-4">3D Model Available</p>
+            <a 
+              href={item.url}
+              download
+              className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
+            >
+              Download 3D Model ({item.url.split('.').pop()?.toUpperCase()})
+            </a>
+          </div>
+          {item.caption && (
+            <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+              {item.caption}
+            </p>
+          )}
+        </motion.div>
+      )
+      
+    case 'audio':
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: Math.min(index * 0.1, 0.5) }}
+          className="space-y-3 md:space-y-4"
+        >
+          <div className="relative z-0 bg-black/40 rounded-lg p-6">
+            <audio 
+              src={item.url}
+              controls
+              className="w-full"
+            />
+          </div>
+          {item.caption && (
+            <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
+              {item.caption}
+            </p>
+          )}
+        </motion.div>
+      )
+      
+    case 'pdf':
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: Math.min(index * 0.1, 0.5) }}
+          className="space-y-3 md:space-y-4"
+        >
+          <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
+            <div className="mb-4">
+              <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <a 
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
+            >
+              View PDF Document
+            </a>
+          </div>
+          {item.caption && (
+            <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+              {item.caption}
+            </p>
+          )}
+        </motion.div>
+      )
+      
+    default:
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: Math.min(index * 0.1, 0.5) }}
+          className="space-y-3 md:space-y-4"
+        >
+          <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center">
+            <a 
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download File: {item.url.split('/').pop()}</span>
+            </a>
+          </div>
+          {item.caption && (
+            <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+              {item.caption}
+            </p>
+          )}
+        </motion.div>
+      )
+  }
+}
 
   if (loading) {
     return (
