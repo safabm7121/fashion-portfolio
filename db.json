@@ -2,85 +2,232 @@
   "projects": [
     {
       "id": 1,
-      "title": "ONS JABEUR COMMISSION",
-      "slug": "ons-jabeur-commission",
-      "description": "Custom dress designed for Tunisian tennis champion Ons Jabeur. A statement piece blending athletic elegance with avant-garde silhouettes.",
-      "fullDescription": "Commissioned by tennis star Ons Jabeur, this custom dress was designed to reflect her powerful presence both on and off the court. The piece combines structural elements with fluid movement, using premium Italian fabrics and hand-finished details. The design process involved multiple fittings and material tests to achieve the perfect balance between comfort and dramatic effect. Featured in several fashion publications, this piece represents the intersection of sport and high fashion.",
-      "coverImage": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&auto=format",
+      "title": "FRACTURED DOLL",
+      "slug": "2026-COLLECTION",
+      "description": "The link between the human body and the doll is explored in this collection, which features exaggerated silhouettes, deconstructed elements, and a mix of hard and soft materials. The collection was inspired by themes of identity, transformation, and the uncanny.",
+      "fullDescription": "the doll acts as a potent representation of a human. The power ascribed to the Doll can be seen as an example of how a physical image can be imbued with abstract meaning and Power, bluring the line between the object and the person it represents.",
+      "coverImage": "/public/projects/project-1/untitled_artwork.jpg",
       "gallery": [
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
-          "caption": "Front view - Architectural draping"
+          "url": "/public/projects/project-1/untitled_artwork.jpg",
+          "caption": "COVER IMAGE - Fractured Doll Collection 2026"
         },
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
-          "caption": "Back detail - Sculptural silhouette"
+          "url": "/public/projects/project-1/untitled_artwork 1.jpg",
+          "caption": "CONTEXT - Fractured Doll Collection 2026"
         },
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format",
+          "url": "/public/projects/project-1/untitled_artwork 2.jpg",
+          "caption": "STORYTELLING - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 3.jpg",
+          "caption": "MOODBOARD - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 4.jpg",
           "caption": "Movement study - Fluid construction"
         },
-        {
-          "type": "video",
-          "url": "https://example.com/video1.mp4",
-          "caption": "Behind the scenes - Fitting process"
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 5.jpg",
+          "caption": "PROTOTYPING - Fractured Doll Collection 2026"
         },
-        {
-          "type": "gif",
-          "url": "https://example.com/animation.gif",
-          "caption": "Design evolution"
-        }
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 6.jpg",
+          "caption": "COLLAGES - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 7.jpg",
+          "caption": "COLLAGES - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 8.jpg",
+          "caption": "COLLAGES P2 - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 9.jpg",
+          "caption": "FLAT PATTERN 1 - Fractured Doll Collection 2026"
+        },
+ {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 10.jpg",
+          "caption": "FLAT PATTERN 2 - Fractured Doll Collection 2026"
+        }, {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 11.jpg",
+          "caption": "FLAT PATTERN 3 - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 12.jpg",
+          "caption": "FLAT PATTERN 4 - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 13.jpg",
+          "caption": "FLAT PATTERN 5 - Fractured Doll Collection 2026"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-1/untitled_artwork 14.jpg",
+          "caption": "FLAT PATTERN 6 - Fractured Doll Collection 2026 "
+        },
+         {
+  "type": "model3d",
+  "url": "/public/projects/project-3/model.glb",
+  "caption": "3D Model of the garment"
+}
+        
       ],
-      "category": "Commission",
-      "year": "2024",
+      "behindTheScenes": {
+    "video": {
+      "url": "https://example.com/video1.mp4",
+      "caption": "Behind the scenes - Fitting process"
+    },
+    "images": [
+      {
+        "url": "/public/projects/project-1/bts1.jpg",
+        "caption": "Behind the scenes - Sketching"
+      },
+      {
+        "url": "/public/projects/project-1/bts2.jpg",
+        "caption": "Behind the scenes - Fabric cutting"
+      },
+      {
+        "url": "/public/projects/project-1/bts3.jpg",
+        "caption": "Behind the scenes - Sewing"
+      },
+      {
+        "url": "/public/projects/project-1/bts4.gif",
+        "caption": "Design evolution - Animation"
+      }
+    ]
+  },
+      
+      "category": "experimental COLLECTION",
+      "year": "2026",
       "materials": ["Italian Silk", "French Lace", "Crystal Embellishments"],
-      "client": "Ons Jabeur",
+      "client": "voidstone studio",
       "role": "Lead Designer"
     },
     {
       "id": 2,
-      "title": "DRAG COSTUME - NATIONAL CHAMPION",
-      "slug": "drag-costume-champion",
+      "title": "Skyward journey",
+      "slug": "esmod-final-collection",
       "description": "First Prize winning costume design for the National Drag Competition. A celebration of queer artistry and theatrical fashion.",
       "fullDescription": "This award-winning costume was created for the National Drag Competition, where it won First Prize. The design explores themes of transformation and identity through exaggerated silhouettes, hand-crafted details, and theatrical elements. Every piece was hand-stitched and embellished over a 3-month period, incorporating over 500 hours of labor. The costume features custom-made accessories, LED elements, and a transformative reveal mechanism.",
-      "coverImage": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&auto=format",
+      "coverImage": "/public/projects/project-3/IMG.jpg",
       "gallery": [
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format",
+          "url": "/public/projects/project-3/IMG1.jpg",
           "caption": "Performance shot - Winning look"
         },
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format",
+          "url": "/public/projects/project-3/IMG2.jpg",
           "caption": "Detail - Hand-embellished elements"
         },
         {
           "type": "image",
-          "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format",
+          "url": "/public/projects/project-3/IMG3.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
-          "type": "video",
-          "url": "https://example.com/drag-performance.mp4",
-          "caption": "Live performance - Competition night"
-        }
+          "type": "image",
+          "url": "/public/projects/project-3/IMG4jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG5.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG6.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG7.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG8.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG9.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG10.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG11.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG12.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG13.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG14.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG15.jpg",
+          "caption": "Behind the scenes - Construction process"
+        }, {
+          "type": "image",
+          "url": "/public/projects/project-3/IMG16.jpg",
+          "caption": "Behind the scenes - Construction process"
+        },
+         {
+    "type": "video",
+    "url": "/public/projects/project-3/final (1).mp4",
+    "caption": "Full collection runway video"
+  }
+ 
+    
       ],
-      "category": "Costume Design",
-      "year": "2024",
+      
+      "category": "MENSWEAR COLLECTION",
+      "year": "2023",
       "materials": ["Custom Sequins", "Feathers", "LED Lights", "Stretch Mesh"],
-      "client": "National Drag Competition",
-      "role": "Costume Designer"
+      "client": "GRADUATION ESMOD PROJECT",
+      "role": "FASHION DESIGNER"
     },
     {
       "id": 3,
-      "title": "CINDERELLA - MENSWEAR COSTUMES",
-      "slug": "cinderella-menswear",
-      "description": "Theatrical menswear costumes for the production of Cinderella. Reimagining classic characters through contemporary silhouettes.",
-      "fullDescription": "For this theatrical production of Cinderella, I designed and constructed all menswear costumes, reimagining traditional characters through a contemporary lens. The collection features tailored suits with deconstructed elements, period-inspired pieces with modern twists, and character-driven designs that enhance storytelling. Each costume was built for durability and quick changes while maintaining visual impact under stage lighting.",
+      "title": "YAZ JESTER ",
+      "slug": "collection2025",
+      "description": "Theatrical COLLECTION merging the amazigh heritage with contemporary fashion. A bold exploration of identity, culture, and performative storytelling through costume design.",
+      "fullDescription": "Yaz Jester is a theatrical collection that merges the rich tapestry of Amazigh heritage with contemporary fashion sensibilities. This bold and innovative collection explores themes of identity, culture, and performative storytelling through costume design. Each piece in the collection is a narrative in itself, drawing inspiration from traditional Amazigh motifs, colors, and craftsmanship while reimagining them in a modern context. The collection features exaggerated silhouettes, intricate embellishments, and a mix of traditional and avant-garde materials, creating a visually striking and culturally resonant body of work that celebrates the intersection of heritage and contemporary fashion.",
       "coverImage": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&auto=format",
       "gallery": [
         {
@@ -112,10 +259,10 @@
     },
     {
       "id": 4,
-      "title": "OFLA TURKI - BESTSELLING COLLECTIONS",
-      "slug": "ofla-turki-bestsellers",
-      "description": "Multiple top-selling collections developed during my tenure at Ofla Turki. Commercial success meets creative innovation.",
-      "fullDescription": "During my time at Ofla Turki, I led the development of multiple best-selling collections that became commercial successes. These collections balanced creative innovation with market demands, resulting in pieces that resonated with customers while pushing design boundaries. The process involved trend research, material sourcing, prototyping, and production oversight from concept to final garment.",
+      "title": "paris fashion show, voidstone studio",
+      "slug": "pretty-little-talent-paris-show",
+      "description": "Commercial collection designed for voidstone studio, a personal fashion brand. The collection was developed for a high-profile Paris fashion show, showcasing a blend of creativity and market appeal.",
+      "fullDescription": "This commercial collection was designed by voidstone studio, a personal fashion brand, and was developed for a high-profile Paris fashion show. The collection aimed to strike a balance between creativity and market appeal, featuring a mix of innovative designs and wearable pieces. Each garment was crafted with attention to detail, incorporating luxurious fabrics and unique embellishments that reflect the brand's aesthetic. The collection received positive feedback for its cohesive narrative, strong visual impact, and commercial viability in the competitive fashion market.",
       "coverImage": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format",
       "gallery": [
         {
@@ -142,10 +289,10 @@
     },
     {
       "id": 5,
-      "title": "WEDDING DRESSES - MAISON OWNER",
-      "slug": "wedding-dresses-commission",
-      "description": "Custom wedding dresses designed for the Maison owner's daughters. Heirloom-quality pieces with sentimental value.",
-      "fullDescription": "This intimate commission involved creating custom wedding dresses for the Maison owner's two daughters. Each dress was designed to reflect the individual's personality while maintaining family heritage elements. The process was deeply collaborative, involving multiple fittings, fabric sourcing from Italy and France, and hand-finishing techniques that took months to complete. These heirloom pieces represent the pinneration of couture craftsmanship.",
+      "title": "art pieces",
+      "slug": "personal-paintings-sculptures-or-illustrations",
+      "description": "This collection of art pieces delves into the relationship between fashion and narrative art. Each piece is a unique interpretation of fashion's role in society, blending traditional techniques with contemporary aesthetics. The works aim to provoke thought and inspire dialogue about the cultural significance of fashion.",
+      "fullDescription": "This collection of art pieces delves into the relationship between fashion and narrative art. Each piece is a unique interpretation of fashion's role in society, blending traditional techniques with contemporary aesthetics. The works aim to provoke thought and inspire dialogue about the cultural significance of fashion. The collection includes a variety of mediums, such as paintings, sculptures, and mixed media installations, each exploring different facets of fashion's influence on identity, culture, and self-expression.",
       "coverImage": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&auto=format",
       "gallery": [
         {
@@ -172,10 +319,10 @@
     },
     {
       "id": 6,
-      "title": "LA FLAMME - ILLUSTRATION SERIES",
-      "slug": "la-flamme-illustrations",
-      "description": "Concept illustration series created for La Flamme. Exploring the intersection of fashion illustration and storytelling.",
-      "fullDescription": "During my time as Illustrator & Concept Designer at La Flamme, I created a series of concept illustrations that merged fashion with narrative art. These pieces explored themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials.",
+      "title": "3D ILLUSTRATIONS ",
+      "slug": "illustrations",
+      "description": "A series of 3D concept SCULPTURES that merge fashion with narrative art. These pieces explore themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials.",
+      "fullDescription": "A series of 3D concept sculptures that merge fashion with narrative art. These pieces explore themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials. Each sculpture is a unique interpretation of fashion's influence on self-expression and cultural identity, showcasing a blend of traditional craftsmanship and digital innovation.",
       "coverImage": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&auto=format",
       "gallery": [
         {

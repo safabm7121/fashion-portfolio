@@ -20,6 +20,215 @@ const Project = () => {
     }
   }, [slug, navigate])
 
+  // Function to determine file type from URL
+  const getFileType = (url) => {
+    if (!url) return 'unknown'
+    const extension = url.split('.').pop()?.toLowerCase()
+    
+    // Images
+    if (['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif', 'svg'].includes(extension)) {
+      return 'image'
+    }
+    // Videos
+    if (['mp4', 'webm', 'mov', 'avi', 'mkv'].includes(extension)) {
+      return 'video'
+    }
+    // 3D Models - show as download link
+    if (['glb', 'gltf', 'obj', 'fbx', 'usdz', 'stl', '3ds', 'dae'].includes(extension)) {
+      return 'model3d'
+    }
+    // Audio
+    if (['mp3', 'wav', 'ogg', 'm4a'].includes(extension)) {
+      return 'audio'
+    }
+    // PDF
+    if (['pdf'].includes(extension)) {
+      return 'pdf'
+    }
+    return 'unknown'
+  }
+
+  // Render appropriate content based on file type
+  const renderGalleryItem = (item, index) => {
+    const fileType = getFileType(item.url)
+    
+    switch (fileType) {
+      case 'image':
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0">
+              <img 
+                src={item.url}
+                alt={item.caption}
+                className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => window.open(item.url, '_blank')}
+              />
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide relative z-10">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+        
+      case 'video':
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0">
+              <video 
+                src={item.url}
+                controls
+                className="w-full rounded-lg"
+                poster={item.poster}
+              />
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+        
+      case 'model3d':
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
+              <div className="mb-4">
+                <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <p className="text-white/60 text-sm mb-4">3D Model Available</p>
+              <a 
+                href={item.url}
+                download
+                className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
+              >
+                Download 3D Model ({item.url.split('.').pop()?.toUpperCase()})
+              </a>
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+        
+      case 'audio':
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0 bg-black/40 rounded-lg p-6">
+              <audio 
+                src={item.url}
+                controls
+                className="w-full"
+              />
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+        
+      case 'pdf':
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center border border-white/10">
+              <div className="mb-4">
+                <svg className="w-16 h-16 mx-auto text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <a 
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-white/40 hover:border-white/80 hover:bg-white/10 transition-all duration-300 text-sm"
+              >
+                View PDF Document
+              </a>
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+        
+      default:
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: Math.min(index * 0.1, 0.5) }}
+            className="space-y-3 md:space-y-4"
+          >
+            <div className="relative z-0 bg-black/40 rounded-lg p-8 text-center">
+              <a 
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>Download File: {item.url.split('/').pop()}</span>
+              </a>
+            </div>
+            {item.caption && (
+              <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide">
+                {item.caption}
+              </p>
+            )}
+          </motion.div>
+        )
+    }
+  }
+
   if (loading) {
     return (
       <div className="fixed inset-0 bg-background flex items-center justify-center">
@@ -30,8 +239,8 @@ const Project = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Header - stays on top */}
-      <div className="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 bg-black/90 backdrop-blur-sm border-b border-white/20">
+      {/* Header - z-40 (BELOW cursor which is z-50) */}
+      <div className="fixed top-0 left-0 right-0 z-40 p-4 md:p-6 bg-black/90 backdrop-blur-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
           <Link 
             to="/" 
@@ -57,7 +266,7 @@ const Project = () => {
       {/* Project Content */}
       <div className="pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-8">
         
-        {/* Hero Image - lower z-index for image container */}
+        {/* Hero Image */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +281,7 @@ const Project = () => {
         </motion.div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Project Header - text content above eyes */}
+          {/* Project Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +302,7 @@ const Project = () => {
             </p>
           </motion.div>
 
-          {/* Project Details Grid - text content above eyes */}
+          {/* Project Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
             <div className="bg-white/5 p-4 md:p-6 border border-white/10">
               <h3 className="text-white/60 text-xs md:text-sm tracking-wider mb-2 md:mb-4">CLIENT</h3>
@@ -109,55 +318,93 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Gallery images - each image has lower z-index so eyes peek through */}
-          <div className="mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4 relative z-10">
-              PROJECT GALLERY
-            </h2>
-            <div className="space-y-8 md:space-y-12">
-              {project.gallery.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="space-y-3 md:space-y-4"
-                >
+          {/* PROJECT GALLERY - Supports all file types */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4 relative z-10">
+                PROJECT GALLERY
+              </h2>
+              <div className="space-y-8 md:space-y-12">
+                {project.gallery.map((item, index) => renderGalleryItem(item, index))}
+              </div>
+            </div>
+          )}
+
+          {/* BEHIND THE SCENES - Separate section with video + image grid */}
+          {project.behindTheScenes && (
+            <div className="mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4 relative z-10">
+                BEHIND THE SCENES
+              </h2>
+              
+              {/* Video Section */}
+              {project.behindTheScenes.video && (
+                <div className="mb-8 md:mb-12">
                   <div className="relative z-0">
-                    {item.type === 'video' ? (
-                      <video 
-                        src={item.url}
-                        controls
-                        className="w-full rounded-none"
-                        poster={item.poster}
-                      />
-                    ) : item.type === 'gif' ? (
-                      <img 
-                        src={item.url}
-                        alt={item.caption}
-                        className="w-full"
-                      />
-                    ) : (
-                      <img 
-                        src={item.url}
-                        alt={item.caption}
-                        className="w-full cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() => window.open(item.url, '_blank')}
-                      />
-                    )}
+                    <video 
+                      src={project.behindTheScenes.video.url}
+                      controls
+                      className="w-full rounded-lg"
+                      poster={project.behindTheScenes.video.poster}
+                    />
                   </div>
-                  {item.caption && (
-                    <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide relative z-10">
-                      {item.caption}
+                  {project.behindTheScenes.video.caption && (
+                    <p className="text-gray-500 text-xs md:text-sm text-center tracking-wide mt-3">
+                      {project.behindTheScenes.video.caption}
                     </p>
                   )}
-                </motion.div>
-              ))}
+                </div>
+              )}
+              
+              {/* Images Grid - Smaller, stacked next to each other */}
+              {project.behindTheScenes.images && project.behindTheScenes.images.length > 0 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                  {project.behindTheScenes.images.map((image, idx) => {
+                    const fileType = getFileType(image.url)
+                    return (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.05 }}
+                        className="space-y-2"
+                      >
+                        <div className="relative z-0 overflow-hidden rounded-lg bg-black/20">
+                          {fileType === 'video' ? (
+                            <video 
+                              src={image.url}
+                              controls
+                              className="w-full h-auto"
+                            />
+                          ) : fileType === 'model3d' ? (
+                            <div className="p-4 text-center">
+                              <p className="text-white/60 text-xs">3D Model</p>
+                              <a href={image.url} download className="text-white/40 text-xs mt-2 inline-block">Download</a>
+                            </div>
+                          ) : (
+                            <img 
+                              src={image.url}
+                              alt={image.caption}
+                              className="w-full h-auto object-cover cursor-pointer hover:scale-105 transition-transform duration-500"
+                              onClick={() => window.open(image.url, '_blank')}
+                            />
+                          )}
+                        </div>
+                        {image.caption && (
+                          <p className="text-gray-500 text-xs text-center tracking-wide">
+                            {image.caption}
+                          </p>
+                        )}
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              )}
             </div>
-          </div>
+          )}
 
-          {/* Contact CTA - text content above eyes */}
+          {/* Contact CTA */}
           <div className="border-t border-white/20 pt-8 md:pt-12 text-center relative z-10">
             <h3 className="text-xl md:text-2xl font-display mb-3 md:mb-4">Interested in this project?</h3>
             <p className="text-gray-400 text-sm md:text-base mb-6 md:mb-8">Let's collaborate on your next creative endeavor</p>
