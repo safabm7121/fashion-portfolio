@@ -6,85 +6,85 @@
       "slug": "2026-COLLECTION",
       "description": "The link between the human body and the doll is explored in this collection, which features exaggerated silhouettes, deconstructed elements, and a mix of hard and soft materials. The collection was inspired by themes of identity, transformation, and the uncanny.",
       "fullDescription": "the doll acts as a potent representation of a human. The power ascribed to the Doll can be seen as an example of how a physical image can be imbued with abstract meaning and Power, bluring the line between the object and the person it represents.",
-      "coverImage": "/src/assets/projects/project-1/untitled_artwork.jpg",
+      "coverImage": "/projects/project-1/untitled_artwork.jpg",
       "gallery": [
         {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork.jpg",
+          "url": "/projects/project-1/untitled_artwork.jpg",
           "caption": "COVER IMAGE - Fractured Doll Collection 2026"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 1.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 1.jpg",
           "caption": "CONTEXT - Fractured Doll Collection 2026"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 2.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 2.jpg",
           "caption": "STORYTELLING - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 3.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 3.jpg",
           "caption": "MOODBOARD - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 4.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 4.jpg",
           "caption": "Movement study - Fluid construction"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 5.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 5.jpg",
           "caption": "PROTOTYPING - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 6.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 6.jpg",
           "caption": "COLLAGES - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 7.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 7.jpg",
           "caption": "COLLAGES - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 8.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 8.jpg",
           "caption": "COLLAGES P2 - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 9.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 9.jpg",
           "caption": "FLAT PATTERN 1 - Fractured Doll Collection 2026"
         },
  {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 10.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 10.jpg",
           "caption": "FLAT PATTERN 2 - Fractured Doll Collection 2026"
         }, {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 11.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 11.jpg",
           "caption": "FLAT PATTERN 3 - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 12.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 12.jpg",
           "caption": "FLAT PATTERN 4 - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 13.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 13.jpg",
           "caption": "FLAT PATTERN 5 - Fractured Doll Collection 2026"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-1/untitled_artwork 14.jpg",
+          "url": "/public/projects/project-1/untitled_artwork 14.jpg",
           "caption": "FLAT PATTERN 6 - Fractured Doll Collection 2026 "
         },
          {
   "type": "model3d",
-  "url": "/src/assets/projects/project-3/model.glb",
+  "url": "/public/projects/project-3/model.glb",
   "caption": "3D Model of the garment"
 }
         
@@ -130,81 +130,81 @@
       "gallery": [
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG1.jpg",
+          "url": "/public/projects/project-3/IMG1.jpg",
           "caption": "Performance shot - Winning look"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG2.jpg",
+          "url": "/public/projects/project-3/IMG2.jpg",
           "caption": "Detail - Hand-embellished elements"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG3.jpg",
+          "url": "/public/projects/project-3/IMG3.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG4.jpg",
+          "url": "/public/projects/project-3/IMG4jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG5.jpg",
+          "url": "/public/projects/project-3/IMG5.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG6.jpg",
+          "url": "/public/projects/project-3/IMG6.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG7.jpg",
+          "url": "/public/projects/project-3/IMG7.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG8.jpg",
+          "url": "/public/projects/project-3/IMG8.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG9.jpg",
+          "url": "/public/projects/project-3/IMG9.jpg",
           "caption": "Behind the scenes - Construction process"
         },
         {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG10.jpg",
+          "url": "/public/projects/project-3/IMG10.jpg",
           "caption": "Behind the scenes - Construction process"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG11.jpg",
+          "url": "/public/projects/project-3/IMG11.jpg",
           "caption": "Behind the scenes - Construction process"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG12.jpg",
+          "url": "/public/projects/project-3/IMG12.jpg",
           "caption": "Behind the scenes - Construction process"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG13.jpg",
+          "url": "/public/projects/project-3/IMG13.jpg",
           "caption": "Behind the scenes - Construction process"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG14.jpg",
+          "url": "/public/projects/project-3/IMG14.jpg",
           "caption": "Behind the scenes - Construction process"
         },
          {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG15.jpg",
+          "url": "/public/projects/project-3/IMG15.jpg",
           "caption": "Behind the scenes - Construction process"
         }, {
           "type": "image",
-          "url": "/src/assets/projects/project-3/IMG16.jpg",
+          "url": "/public/projects/project-3/IMG16.jpg",
           "caption": "Behind the scenes - Construction process"
         },
        {
