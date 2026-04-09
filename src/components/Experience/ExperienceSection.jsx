@@ -1,27 +1,32 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const ExperienceSection = () => {
   const experiences = [
     {
+      id: "voidstone-studio",
       title: "Founder & Creative Director",
       company: "Voidstone Studio (INORPI-registered)",
       period: "2024 – Present",
       description: "Independent fashion brand specializing in avant-garde, alternative, and gothic aesthetics. Full creative direction from concept to production. Currently developing an e-commerce platform using microservice architecture."
     },
     {
+      id: "ofla-turki",
       title: "Creative Designer",
       company: "Ofla Turki",
       period: "Jan 2024 – Jun 2024",
       description: "Led end-to-end development of multiple top-selling collections. Oversaw design process from concept to final production, managing cross-functional teams and supplier relationships."
     },
     {
+      id: "la-flamme",
       title: "Illustrator & Concept Designer",
       company: "La Flamme",
       period: "Aug 2024 – Feb 2025",
       description: "Created concept illustrations and developed visual identity for brand collections. Collaborated on marketing materials, lookbooks, and brand storytelling."
     },
     {
+      id: "freelance-costume",
       title: "Freelance Costume Designer",
       company: "Various Projects",
       period: "2025 – Present",
@@ -140,38 +145,53 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Professional Experience */}
+    {/* Professional Experience - CLICKABLE */}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="mb-20"
+>
+  <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+    Experience
+  </h2>
+  
+  <div className="space-y-12">
+    {experiences.map((exp, index) => (
+      <Link
+        key={index}
+        to={`/experience/${exp.id}`}
+        className="block group cursor-pointer"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-20"
+          transition={{ delay: index * 0.1 }}
+          className="border-l-2 border-white/20 pl-6 hover:border-white/60 transition-colors"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
-            Experience
-          </h2>
-          
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="border-l-2 border-white/20 pl-6"
-              >
-                <div className="flex flex-wrap justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <span className="text-white/40 text-sm">{exp.period}</span>
-                </div>
-                <p className="text-white/60 mb-3">{exp.company}</p>
-                <p className="text-gray-400">{exp.description}</p>
-              </motion.div>
-            ))}
+          <div className="flex flex-wrap justify-between items-start mb-2">
+            <h3 className="text-xl font-bold group-hover:text-white/80 transition-colors">
+              {exp.title}
+            </h3>
+            <span className="text-white/40 text-sm">{exp.period}</span>
+          </div>
+          <p className="text-white/60 mb-3">{exp.company}</p>
+          <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+            {exp.description}
+          </p>
+          <div className="mt-3 text-white/40 text-xs group-hover:text-white/60 transition-colors flex items-center gap-1">
+            READ MORE
+            <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </div>
         </motion.div>
+      </Link>
+    ))}
+  </div>
+</motion.div>
 
         {/* Education & Certifications - CARDS with z-20 */}
         <motion.div
@@ -206,7 +226,8 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Fashion Design Skills - CARDS with z-20 */}
+        {/* Rest of your component remains the same... */}
+        {/* Fashion Design Skills */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -236,7 +257,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Jewelry Design - CARDS with z-20 */}
+        {/* Jewelry Design */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -264,7 +285,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Videography & Motion Graphics - CARD with z-20 */}
+        {/* Videography & Motion Graphics */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -287,7 +308,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Full Stack Development - CARDS with z-20 */}
+        {/* Full Stack Development */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -351,7 +372,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Additional Competencies - CARD with z-20 */}
+        {/* Additional Competencies */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -374,7 +395,7 @@ const ExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* Languages - CARDS with z-20 */}
+        {/* Languages */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

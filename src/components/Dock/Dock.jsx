@@ -74,6 +74,82 @@ function DockIcon({ children, className = '' }) {
   return <div className={`dock-icon ${className}`}>{children}</div>;
 }
 
+// Mobile Bottom Navigation Component
+function MobileBottomNav({ items }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  if (!items || items.length === 0) return null;
+
+  const visibleItems = items.slice(0, 3);
+  const menuItems = items.slice(3);
+
+  return (
+    <div className="mobile-dock-container">
+      <div className="mobile-bottom-bar">
+        {visibleItems.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              if (item.onClick) item.onClick();
+              setIsMenuOpen(false);
+            }}
+            className="mobile-dock-item"
+            aria-label={item.label}
+          >
+            <div className="mobile-dock-icon">{item.icon}</div>
+            <span className="mobile-dock-label">{item.label}</span>
+          </button>
+        ))}
+        
+        {menuItems.length > 0 && (
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`mobile-dock-item mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
+            aria-label="Menu"
+          >
+            <div className="mobile-dock-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </div>
+            <span className="mobile-dock-label">Menu</span>
+          </button>
+        )}
+      </div>
+
+      <AnimatePresence>
+        {isMenuOpen && menuItems.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.2 }}
+            className="mobile-dropdown-menu"
+          >
+            {menuItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (item.onClick) item.onClick();
+                  setIsMenuOpen(false);
+                }}
+                className="mobile-dropdown-item"
+              >
+                <div className="mobile-dropdown-icon">{item.icon}</div>
+                <span className="mobile-dropdown-label">{item.label}</span>
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Dock({
   items,
   className = '',
@@ -84,8 +160,21 @@ export default function Dock({
   dockHeight = 256,
   baseItemSize = 50
 }) {
+  const [isMobile, setIsMobile] = useState(false);
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const maxHeight = useMemo(
     () => Math.max(dockHeight, magnification + magnification / 2 + 4),
@@ -94,8 +183,14 @@ export default function Dock({
   const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
   const height = useSpring(heightRow, spring);
 
+  // Mobile view
+  if (isMobile) {
+    return <MobileBottomNav items={items} />;
+  }
+
+  // Desktop view
   return (
-    <motion.div style={{ height, scrollbarWidth: 'none' }} className="dock-outer">
+    <motion.div style={{ height }} className="dock-outer">
       <motion.div
         onMouseMove={({ pageX }) => {
           isHovered.set(1);

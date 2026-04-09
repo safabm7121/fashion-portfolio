@@ -21,6 +21,7 @@
     color: #FFFFFF;
     font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
+    margin-bottom: 30px;
   }
 
   /* Hide default cursor, show custom cursor only on desktop */
@@ -131,9 +132,109 @@
   cursor: pointer;
 }
 
-/* Mobile: show default cursor on dock */
+/* Dark/Light Mode Variables */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Update component styles for light mode */
+.light .dock-panel {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .dock-item {
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+}
+
+.light .dock-label {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #000000;
+}
+
+.light .mobile-bottom-bar,
+.light .mobile-dropdown-menu {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .mobile-dock-label,
+.light .mobile-dropdown-label {
+  color: #000000;
+}
+
+.light .mobile-dock-icon svg,
+.light .mobile-dropdown-icon svg {
+  color: #000000;
+}
+
+/* Update card styles for light mode */
+.light .bg-black\/80 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .text-white {
+  color: #000000 !important;
+}
+
+.light .text-gray-400,
+.light .text-gray-500 {
+  color: #666666 !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Back to Top and Theme Toggle positioning on mobile */
 @media (max-width: 768px) {
-  .dock-item {
-    cursor: pointer !important;
+  .theme-toggle,
+  .back-to-top {
+    right: 16px !important;
   }
+  
+  .theme-toggle {
+    bottom: 80px !important;
+  }
+  
+  .back-to-top {
+    bottom: 140px !important;
+  }
+}
+.SplashCursor {
+ 
 }

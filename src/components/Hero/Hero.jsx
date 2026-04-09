@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import AnimatedBackground from '../Background/AnimatedBackground'
 
 const Hero = ({ scrollToProjects }) => {
   const containerVariants = {
@@ -30,13 +29,9 @@ const Hero = ({ scrollToProjects }) => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Soft motion background */}
-      <AnimatedBackground />
+      {/* REMOVED AnimatedBackground - no background animation */}
       
-      {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-5" />
-      
-      {/* Main content - Adjusted positioning */}
+      {/* Main content */}
       <div className="relative z-10 h-full flex items-center px-6 md:px-12 lg:px-20" style={{ paddingTop: '5vh', paddingBottom: '5vh' }}>
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
@@ -58,7 +53,7 @@ const Hero = ({ scrollToProjects }) => {
               
               <motion.div variants={itemVariants} className="space-y-1">
                 <div className="overflow-hidden">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.85] tracking-tight">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.85] tracking-tight text-white">
                     SAFA
                   </h1>
                 </div>
@@ -127,7 +122,7 @@ const Hero = ({ scrollToProjects }) => {
         </div>
       </div>
 
-      {/* Animated scrolling text bar - Moved UP slightly */}
+      {/* Animated scrolling text bar */}
       <div className="absolute bottom-16 left-0 right-0 overflow-hidden whitespace-nowrap z-20">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
@@ -140,7 +135,7 @@ const Hero = ({ scrollToProjects }) => {
         </motion.div>
       </div>
 
-      {/* Fluid Scroll Indicator - Moved DOWN */}
+      {/* Fluid Scroll Indicator */}
       <motion.div 
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
         animate={{ y: [0, 4, 0] }}
@@ -154,7 +149,7 @@ const Hero = ({ scrollToProjects }) => {
         </div>
       </motion.div>
 
-      {/* Credit - At very bottom */}
+      {/* Credit */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-center whitespace-nowrap">
         <p className="text-white/20 text-[7px] tracking-wider font-mono">
           PORTFOLIO CRAFTED BY SAFA BEN MILED

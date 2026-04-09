@@ -1051,7 +1051,8 @@ function SplashCursor({
         zIndex: 0,
         pointerEvents: 'none',
         width: '100%',
-        height: '100%'
+        height: '100%',
+        opacity: 0.5
       }}
     >
       <canvas
@@ -1060,7 +1061,8 @@ function SplashCursor({
         style={{
           width: '100vw',
           height: '100vh',
-          display: 'block'
+          display: 'block',
+          opacity: 1
         }}
       />
     </div>
