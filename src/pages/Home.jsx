@@ -42,11 +42,21 @@ function Home() {
     <>
       <main>
         <Hero scrollToProjects={scrollToProjects} />
+        {/* Projects Section */}
         <div id="projects" ref={projectsRef}>
           <ProjectsGrid />
         </div>
-        <ExperienceSection />
-        <Contact />
+        {/* Experience Section (contains Who I Am) */}
+        <div id="experience">
+          <ExperienceSection />
+        </div>
+        
+        
+        
+        {/* Contact Section */}
+        <div id="contact">
+          <Contact />
+        </div>
       </main>
     </>
   )

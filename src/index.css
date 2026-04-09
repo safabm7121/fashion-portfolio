@@ -112,3 +112,28 @@
   pointer-events: none;
   z-index: 5;
 }
+/* Dock positioning overrides */
+.dock-outer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.dock-panel {
+  pointer-events: auto;
+}
+
+/* Ensure dock items are clickable above cursor */
+.dock-item {
+  cursor: pointer;
+}
+
+/* Mobile: show default cursor on dock */
+@media (max-width: 768px) {
+  .dock-item {
+    cursor: pointer !important;
+  }
+}

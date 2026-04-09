@@ -105,6 +105,7 @@ const ExperienceSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* About Section - text only, no background */}
         <motion.div
+          id="who-i-am" 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
