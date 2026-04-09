@@ -9,6 +9,7 @@ import MobileNav from './components/MobileNav/MobileNav';
 import { HiHome, HiUser, HiFolder, HiMail } from 'react-icons/hi';
 import './components/Dock/Dock.css';
 import ExperienceDetail from './pages/ExperienceDetail';
+import SplashCursor from './components/SplashCursor/SplashCursor';
 
 // Back to Top Button Component
 const BackToTop = () => {
@@ -95,6 +96,7 @@ const AppWithDock = () => {
 
   return (
     <>
+    <SplashCursor />
       <Cursor />
       {!isMobile && <Dock items={dockItems} panelHeight={68} baseItemSize={50} magnification={70} />}
       {isMobile && <MobileNav />}
