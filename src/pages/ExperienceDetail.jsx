@@ -94,7 +94,7 @@ const ExperienceDetail = () => {
       hasVideo: false
     },
     "freelance-costume": {
-      id: "freelance-costume",
+      id: "freelance-costumes",
       title: "Freelance Costume Designer",
       company: "Various Projects",
       period: "2025 – Present",
