@@ -87,7 +87,7 @@ const Cursor = () => {
           style={{
             left: point.x,
             top: point.y,
-            opacity: point.opacity,
+            opacity: 0.3,
             transform: 'translate(-50%, -50%)',
             whiteSpace: 'nowrap'
           }}

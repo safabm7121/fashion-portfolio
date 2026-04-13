@@ -1044,28 +1044,27 @@ function SplashCursor({
 
   return (
     <div
+    style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      zIndex: 0,  
+      pointerEvents: 'none',
+      width: '100%',
+      height: '100%',
+      opacity: 0.2
+    }}
+  >
+    <canvas
+      ref={canvasRef}
+      id="fluid"
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: 0,
-        pointerEvents: 'none',
-        width: '100%',
-        height: '100%',
-        opacity: 0.5
+        width: '100vw',
+        height: '100vh',
+        display: 'block'
       }}
-    >
-      <canvas
-        ref={canvasRef}
-        id="fluid"
-        style={{
-          width: '100vw',
-          height: '100vh',
-          display: 'block',
-          opacity: 1
-        }}
-      />
-    </div>
+    />
+  </div>
   );
 }
 
