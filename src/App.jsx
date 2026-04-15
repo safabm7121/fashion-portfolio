@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Project from './pages/Project';
-import Experience from './pages/Experience';
 import Cursor from './components/Cursor/Cursor';
 import Dock from './components/Dock/Dock';
 import MobileNav from './components/MobileNav/MobileNav';
@@ -87,23 +86,81 @@ const AppWithDock = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   
+  const scrollToExperience = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('experience');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const section = document.getElementById('experience');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProjects = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('projects');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const section = document.getElementById('projects');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('contact');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const section = document.getElementById('contact');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const dockItems = [
-    { icon: <HiHome size={18} />, label: 'Home', onClick: () => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
-    { icon: <HiUser size={18} />, label: 'Experience', onClick: () => { navigate('/experience'); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
-    { icon: <HiFolder size={18} />, label: 'Projects', onClick: () => { if (window.location.pathname !== '/') { navigate('/'); setTimeout(() => { const section = document.getElementById('projects'); if (section) section.scrollIntoView({ behavior: 'smooth' }); }, 100); } else { const section = document.getElementById('projects'); if (section) section.scrollIntoView({ behavior: 'smooth' }); } } },
-    { icon: <HiMail size={18} />, label: 'Contact', onClick: () => { if (window.location.pathname !== '/') { navigate('/'); setTimeout(() => { const section = document.getElementById('contact'); if (section) section.scrollIntoView({ behavior: 'smooth' }); }, 100); } else { const section = document.getElementById('contact'); if (section) section.scrollIntoView({ behavior: 'smooth' }); } } },
+    { 
+      icon: <HiHome size={18} />, 
+      label: 'Home', 
+      onClick: () => { 
+        navigate('/'); 
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      } 
+    },
+    { 
+      icon: <HiUser size={18} />, 
+      label: 'Experience', 
+      onClick: scrollToExperience
+    },
+    { 
+      icon: <HiFolder size={18} />, 
+      label: 'Projects', 
+      onClick: scrollToProjects
+    },
+    { 
+      icon: <HiMail size={18} />, 
+      label: 'Contact', 
+      onClick: scrollToContact
+    },
   ];
 
   return (
     <>
-    <SplashCursor />
+      <SplashCursor />
       <Cursor />
       {!isMobile && <Dock items={dockItems} panelHeight={68} baseItemSize={50} magnification={70} />}
       {isMobile && <MobileNav />}
       <BackToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-         <Route path="/experience/:id" element={<ExperienceDetail />} />
+        <Route path="/experience/:id" element={<ExperienceDetail />} />
         <Route path="/project/:slug" element={<Project />} />
       </Routes>
     </>

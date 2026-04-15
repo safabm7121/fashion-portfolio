@@ -12,7 +12,7 @@ const Cursor = () => {
   const cursorYSpring = useSpring(cursorY, { damping: 20, stiffness: 400 })
   
   // Words for text trail
-  const trailWords = ["✦", "VIEW", "CLICK", "DRAG", "SCROLL", "ENTER", "EXPLORE", "FASHION", "DESIGN", "✦"]
+  const trailWords = ["✦", "VIEW", "CLICK", "COLLECTION", "SCROLL", "ENTER", "EXPLORE", "FASHION", "DESIGN", "✦"]
   
   // Get center position on mount and resize
   useEffect(() => {
