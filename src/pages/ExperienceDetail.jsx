@@ -32,9 +32,7 @@ const ExperienceDetail = () => {
         "Featured in local fashion publications"
       ],
       images: [
-        "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800",
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800",
-        "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800"
+      
       ],
       video: null,
       skills: ["Creative Direction", "Brand Strategy", "Full Stack Dev", "Collection Development"],
@@ -60,8 +58,7 @@ const ExperienceDetail = () => {
         "Successfully launched 3 best-selling collections"
       ],
       images: [
-        "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800",
-        "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800"
+       
       ],
       skills: ["Team Leadership", "Production Management", "Technical Design", "Quality Control"],
       hasVideo: false
@@ -86,9 +83,7 @@ const ExperienceDetail = () => {
         "Featured in industry publications"
       ],
       images: [
-        "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800",
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800",
-        "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800"
+        
       ],
       skills: ["Illustration", "Brand Identity", "Adobe Creative Suite", "Concept Development"],
       hasVideo: false
@@ -113,8 +108,7 @@ const ExperienceDetail = () => {
         "Featured in local theater productions"
       ],
       images: [
-        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800",
-        "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800"
+        
       ],
       skills: ["Costume Design", "Pattern Making", "Fabric Sourcing", "Performance Wear"],
       hasVideo: false

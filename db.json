@@ -10,7 +10,7 @@
       "gallery": [
         {
           "type": "image",
-          "url": "/public/projects/project-1/untitled_Artwork.jpg",
+          "url": "/public/projects/project-1/Untitled_artwork.jpg",
           "caption": "COVER IMAGE - Fractured Doll Collection 2026"
         },
         {
@@ -221,131 +221,6 @@
       "materials": ["Custom Sequins", "Feathers", "LED Lights", "Stretch Mesh"],
       "client": "GRADUATION ESMOD PROJECT",
       "role": "FASHION DESIGNER"
-    },
-    {
-      "id": 3,
-      "title": "YAZ JESTER ",
-      "slug": "collection2025",
-      "description": "Theatrical COLLECTION merging the amazigh heritage with contemporary fashion. A bold exploration of identity, culture, and performative storytelling through costume design.",
-      "fullDescription": "Yaz Jester is a theatrical collection that merges the rich tapestry of Amazigh heritage with contemporary fashion sensibilities. This bold and innovative collection explores themes of identity, culture, and performative storytelling through costume design. Each piece in the collection is a narrative in itself, drawing inspiration from traditional Amazigh motifs, colors, and craftsmanship while reimagining them in a modern context. The collection features exaggerated silhouettes, intricate embellishments, and a mix of traditional and avant-garde materials, creating a visually striking and culturally resonant body of work that celebrates the intersection of heritage and contemporary fashion.",
-      "coverImage": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&auto=format",
-      "gallery": [
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format",
-          "caption": "Prince's costume - Final look"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
-          "caption": "Character sketches - Design process"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
-          "caption": "Backstage - Cast in costume"
-        },
-        {
-          "type": "gif",
-          "url": "https://example.com/design-process.gif",
-          "caption": "From sketch to final garment"
-        }
-      ],
-      "category": "Theatrical Costume",
-      "year": "2024",
-      "materials": ["Wool Suiting", "Silk Satin", "Custom Buttons"],
-      "client": "Cinderella Theatrical Production",
-      "role": "Menswear Costume Designer"
-    },
-    {
-      "id": 4,
-      "title": "paris fashion show, voidstone studio",
-      "slug": "pretty-little-talent-paris-show",
-      "description": "Commercial collection designed for voidstone studio, a personal fashion brand. The collection was developed for a high-profile Paris fashion show, showcasing a blend of creativity and market appeal.",
-      "fullDescription": "This commercial collection was designed by voidstone studio, a personal fashion brand, and was developed for a high-profile Paris fashion show. The collection aimed to strike a balance between creativity and market appeal, featuring a mix of innovative designs and wearable pieces. Each garment was crafted with attention to detail, incorporating luxurious fabrics and unique embellishments that reflect the brand's aesthetic. The collection received positive feedback for its cohesive narrative, strong visual impact, and commercial viability in the competitive fashion market.",
-      "coverImage": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&auto=format",
-      "gallery": [
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format",
-          "caption": "Spring/Summer Collection 2024"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
-          "caption": "Campaign shoot - Bestselling pieces"
-        },
-       {
-  "type": "video",
-  "url": "https://youtu.be/Gyu13WNUsCA?si=vBZ2hmllM61tWBhv",
-  "caption": "Collection showcase video"
-}
-      ],
-      "category": "Commercial Collection",
-      "year": "2023-2024",
-      "materials": ["Various - See collection details"],
-      "client": "Ofla Turki",
-      "role": "Creative Designer"
-    },
-    {
-      "id": 5,
-      "title": "art pieces",
-      "slug": "personal-paintings-sculptures-or-illustrations",
-      "description": "This collection of art pieces delves into the relationship between fashion and narrative art. Each piece is a unique interpretation of fashion's role in society, blending traditional techniques with contemporary aesthetics. The works aim to provoke thought and inspire dialogue about the cultural significance of fashion.",
-      "fullDescription": "This collection of art pieces delves into the relationship between fashion and narrative art. Each piece is a unique interpretation of fashion's role in society, blending traditional techniques with contemporary aesthetics. The works aim to provoke thought and inspire dialogue about the cultural significance of fashion. The collection includes a variety of mediums, such as paintings, sculptures, and mixed media installations, each exploring different facets of fashion's influence on identity, culture, and self-expression.",
-      "coverImage": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&auto=format",
-      "gallery": [
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format",
-          "caption": "Dress 1 - Classic elegance"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format",
-          "caption": "Dress 2 - Modern romance"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
-          "caption": "Detail work - Hand embroidery"
-        }
-      ],
-      "category": "Couture",
-      "year": "2024",
-      "materials": ["French Lace", "Italian Silk", "Hand Beading"],
-      "client": "Private Commission",
-      "role": "Couture Designer"
-    },
-    {
-      "id": 6,
-      "title": "3D ILLUSTRATIONS ",
-      "slug": "illustrations",
-      "description": "A series of 3D concept SCULPTURES that merge fashion with narrative art. These pieces explore themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials.",
-      "fullDescription": "A series of 3D concept sculptures that merge fashion with narrative art. These pieces explore themes of movement, emotion, and identity through stylized figures and experimental techniques. The series was used for brand development, lookbook concepts, and marketing materials. Each sculpture is a unique interpretation of fashion's influence on self-expression and cultural identity, showcasing a blend of traditional craftsmanship and digital innovation.",
-      "coverImage": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&auto=format",
-      "gallery": [
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format",
-          "caption": "Series 1 - Movement study"
-        },
-        {
-          "type": "image",
-          "url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format",
-          "caption": "Series 2 - Texture exploration"
-        },
-        {
-          "type": "gif",
-          "url": "https://example.com/illustration-process.gif",
-          "caption": "Digital illustration process"
-        }
-      ],
-      "category": "Illustration",
-      "year": "2024-2025",
-      "materials": ["Digital Media", "Mixed Media"],
-      "client": "La Flamme",
-      "role": "Illustrator & Concept Designer"
     }
   ]
 }
