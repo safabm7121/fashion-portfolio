@@ -82,6 +82,21 @@
           "url": "/public/projects/project-1/Untitled_Artwork 14.jpg",
           "caption": "FLAT PATTERN 6 - Fractured Doll Collection 2026 "
         },
+        {
+          "type": "image",
+          "url": "/public/projects/project-1/IMG_1380.jpeg",
+          "caption": "fabric manipulation - Fractured Doll Collection 2026"
+        },
+          {
+          "type": "image",
+          "url": "/public/projects/project-1/IMG_1383.jpeg",
+          "caption": "fabric manipulation - Fractured Doll Collection 2026"
+        },
+          {
+          "type": "image",
+          "url": "/public/projects/project-1/IMG_1386.jpeg",
+          "caption": "fabric manipulation - Fractured Doll Collection 2026"
+        },
          {
   "type": "model3d",
   "url": "/public/projects/project-3/model.glb",
@@ -108,7 +123,7 @@
         "caption": "Behind the scenes - Sewing"
       },
       {
-        "url": "/public/projects/project-1/bts4.gif",
+        "url": "/public/projects/project-1/IMG_4426.gif",
         "caption": "Design evolution - Animation"
       }
     ]
@@ -207,6 +222,7 @@
           "url": "/public/projects/project-3/IMG16.jpg",
           "caption": "Behind the scenes - Construction process"
         },
+       
        {
   "type": "video",
   "url": "https://drive.google.com/file/d/1NqByYo9qGPZERV1Q22loGwWlxVZTUnBW/preview",
@@ -221,6 +237,161 @@
       "materials": ["Custom Sequins", "Feathers", "LED Lights", "Stretch Mesh"],
       "client": "GRADUATION ESMOD PROJECT",
       "role": "FASHION DESIGNER"
+    },
+      {
+      "id": 3,
+      "title": "COLLECTION 2025",
+      "slug": "2025-COLLECTION",
+      "description": "A ready to wear collection that explores the intersection of fashion and technology, featuring innovative materials, theatrical silhouettes, and interactive elements. The collection was inspired by themes of visual kei aesthetics, romantic vibes, and the focus on  high impact pieces that create a strong visual statement.",
+      "fullDescription": "this collection was created for my participation in a fashion show in paris in 2025 with the pretty little talent agency. The collection explores the intersection of fashion and technology, featuring innovative materials, theatrical silhouettes, and interactive elements. The collection was inspired by themes of visual kei aesthetics, romantic vibes, and the focus on high impact pieces that create a strong visual statement.",
+      "coverImage": "/public/projects/project-2/5.png",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/1.png",
+          "caption": "page 1"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/2.png",
+          "caption": "page 2"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/3.png",
+          "caption": "page 3"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/4.png",
+          "caption": "page 4"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/5.png",
+          "caption": "page 5"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/6.png",
+          "caption": "page 6"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/7.png",
+          "caption": "page 7"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/8.png",
+          "caption": "page 8"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/9.png",
+          "caption": "page 9"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-2/10.png",
+          "caption": "page 10"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-2/11.png",
+          "caption": "page 11"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-2/12.png",
+          "caption": "page 12"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-2/13.png",
+          "caption": "page 13"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-2/14.png",
+          "caption": "page 14"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-2/15.png",
+          "caption": "page 15"
+        }
+    
+      ],
+  
+      "category": "womenswear COLLECTION",
+      "year": "2025",
+      "materials": ["silk", "lace", "recycled fabrics", "tartan"],
+      "client": "voidstone studio",
+      "role": "FASHION DESIGNER & brand owner"
+    },
+     {
+      "id": 4,
+      "title": "illustrations ",
+      "slug": "art book",
+      "description": "A collection of illustrations exploring the intersection of fashion and art.",
+      "fullDescription": "this is a collection of my art pieces and illustrations that helps me explore the intersection of fashion and art. The collection includes a variety of mediums, such as digital illustrations, hand-drawn sketches, and mixed media pieces. The themes explored in this collection include identity, transformation, and the relationship between the body and clothing.",
+      "coverImage": "/public/projects/project-4/1.png",
+      "gallery": [
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/1.png",
+          "caption": "page 1"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/2.png",
+          "caption": "page 2"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/3.png",
+          "caption": "page 3"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/4.png",
+          "caption": "page 4"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/5.png",
+          "caption": "page 5"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/6.png",
+          "caption": "page 6"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/7.png",
+          "caption": "page 7"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/8.png",
+          "caption": "page 8"
+        },
+        {
+          "type": "image",
+          "url": "/public/projects/project-4/9.png",
+          "caption": "page 9"
+        }
+    
+      ],
+  
+      "category": "womenswear COLLECTION",
+      "year": "2025",
+      "materials": ["silk", "lace", "recycled fabrics", "tartan"],
+      "client": "voidstone studio",
+      "role": "FASHION DESIGNER & brand owner"
     }
+    
   ]
 }
