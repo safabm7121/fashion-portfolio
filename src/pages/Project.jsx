@@ -206,15 +206,18 @@ const Project = () => {
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-40 p-4 md:p-6 bg-black/90 backdrop-blur-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-1 md:gap-2 text-white/80 hover:text-white transition-colors group interactive text-sm md:text-base"
-          >
-            <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            BACK TO HOME
-          </Link>
+         <button 
+  onClick={() => {
+    window.scrollTo(0, 0)
+    navigate('/')
+  }} 
+  className="inline-flex items-center gap-1 md:gap-2 text-white/80 hover:text-white transition-colors group interactive text-sm md:text-base"
+>
+  <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+  </svg>
+  BACK TO HOME
+</button>
           
           <a 
             href="https://www.voidstonestudio.com" 
