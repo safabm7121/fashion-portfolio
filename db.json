@@ -382,7 +382,13 @@
           "type": "image",
           "url": "/public/projects/project-4/9.png",
           "caption": "page 9"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-4/10.png",
+          "caption": "page 10"
         }
+    
     
       ],
   
