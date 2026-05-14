@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { Suspense, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import Lanyard3D from '../../components/Lanyard3D'
 
 const ExperienceSection = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const experiences = [
     {
       id: "voidstone-studio",
@@ -108,7 +118,8 @@ const ExperienceSection = () => {
   return (
     <section className="py-24 px-4 md:px-8 lg:px-16 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        {/* About Section - text only, no background */}
+        
+        {/* Who I Am Section with Lanyard3D */}
         <motion.div
           id="who-i-am" 
           initial={{ opacity: 0, y: 50 }}
@@ -117,83 +128,103 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <span className="text-white/60 text-sm tracking-[0.3em] uppercase mb-4 block border-l-2 border-white/40 pl-4">
-            Who I Am
-          </span>
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Fashion Designer
-              <br />
-              <span className="text-white/80">& Full Stack Developer</span>
-            </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Hi, I'm Safa Ben Miled, a junior full-stack developer certified by GoMyCode, 
-              currently in the middle of a career change that combines my two passions.
-            </p>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              It all started after my fashion degree at ESMOD International and my 3 years 
-              of experience in the fashion industry. When I wanted to create my own website 
-              to showcase my work, I realized I didn't master that aspect at all. So I got 
-              certified in tech—and discovered a real passion for development.
-            </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              My unconventional background is my strength: fashion taught me attention to 
-              detail, creativity, and a real understanding of user experience. Today, I apply 
-              that to web development to create applications that are both functional and 
-              aesthetically pleasing.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div>
+              <span className="text-white/60 text-sm tracking-[0.3em] uppercase mb-4 block border-l-2 border-white/40 pl-4">
+                Who I Am
+              </span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                Fashion Designer
+                <br />
+                <span className="text-white/80">& Full Stack Developer</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                Hi, I'm Safa Ben Miled, a junior full-stack developer certified by GoMyCode, 
+                currently in the middle of a career change that combines my two passions.
+              </p>
+              <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                It all started after my fashion degree at ESMOD International and my 3 years 
+                of experience in the fashion industry. When I wanted to create my own website 
+                to showcase my work, I realized I didn't master that aspect at all. So I got 
+                certified in tech—and discovered a real passion for development.
+              </p>
+              <p className="text-gray-400 text-lg leading-relaxed">
+                My unconventional background is my strength: fashion taught me attention to 
+                detail, creativity, and a real understanding of user experience. Today, I apply 
+                that to web development to create applications that are both functional and 
+                aesthetically pleasing.
+              </p>
+            </div>
+
+            {/* Right side - Lanyard3D */}
+            <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+              <Suspense fallback={
+                <div className="w-full h-full flex items-center justify-center bg-black/40 rounded-2xl">
+                  <div className="text-center">
+                    <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                    <p className="text-white/60 text-sm">Loading 3D Card...</p>
+                  </div>
+                </div>
+              }>
+                <Lanyard3D 
+                  position={[0, 0, isMobile ? 25 : 20]} 
+                  gravity={[0, -40, 0]} 
+                />
+              </Suspense>
+            </div>
           </div>
         </motion.div>
 
-    {/* Professional Experience - CLICKABLE */}
-<motion.div
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.1 }}
-  className="mb-20"
->
-  <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
-    Experience
-  </h2>
-  
-  <div className="space-y-12">
-    {experiences.map((exp, index) => (
-      <Link
-        key={index}
-        to={`/experience/${exp.id}`}
-        className="block group cursor-pointer"
-      >
+        {/* Professional Experience - CLICKABLE */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-          className="border-l-2 border-white/20 pl-6 hover:border-white/60 transition-colors"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-20"
         >
-          <div className="flex flex-wrap justify-between items-start mb-2">
-            <h3 className="text-xl font-bold group-hover:text-white/80 transition-colors">
-              {exp.title}
-            </h3>
-            <span className="text-white/40 text-sm">{exp.period}</span>
-          </div>
-          <p className="text-white/60 mb-3">{exp.company}</p>
-          <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
-            {exp.description}
-          </p>
-          <div className="mt-3 text-white/40 text-xs group-hover:text-white/60 transition-colors flex items-center gap-1">
-            READ MORE
-            <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+            Experience
+          </h2>
+          
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <Link
+                key={index}
+                to={`/experience/${exp.id}`}
+                className="block group cursor-pointer"
+              >
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="border-l-2 border-white/20 pl-6 hover:border-white/60 transition-colors"
+                >
+                  <div className="flex flex-wrap justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold group-hover:text-white/80 transition-colors">
+                      {exp.title}
+                    </h3>
+                    <span className="text-white/40 text-sm">{exp.period}</span>
+                  </div>
+                  <p className="text-white/60 mb-3">{exp.company}</p>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                    {exp.description}
+                  </p>
+                  <div className="mt-3 text-white/40 text-xs group-hover:text-white/60 transition-colors flex items-center gap-1">
+                    READ MORE
+                    <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
           </div>
         </motion.div>
-      </Link>
-    ))}
-  </div>
-</motion.div>
 
-        {/* Education & Certifications - CARDS with z-20 */}
+        {/* Education & Certifications */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -213,20 +244,19 @@ const ExperienceSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-colors relative z-20"
+                className="bg-white/5 backdrop-blur-sm p-6 border border-white/10 hover:border-white/30 transition-colors"
               >
                 <h3 className="font-bold text-lg mb-1">{edu.degree}</h3>
                 <p className="text-white/60 text-sm mb-2">{edu.school}</p>
                 <p className="text-white/40 text-xs mb-3">{edu.period}</p>
                 {edu.details && (
-                  <p className="text-gray-500 text-sm">{edu.details}</p>
+                  <p className="text-gray-400 text-sm">{edu.details}</p>
                 )}
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Rest of your component remains the same... */}
         {/* Fashion Design Skills */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -241,13 +271,13 @@ const ExperienceSection = () => {
           
           <div className="space-y-8">
             {fashionDesignSkills.map((category, idx) => (
-              <div key={idx} className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+              <div key={idx} className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
                 <h3 className="text-xl font-bold mb-4 text-white/80 border-l-2 border-white/40 pl-4">
                   {category.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
-                    <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 text-sm hover:border-white/30 transition-colors">
+                    <span key={i} className="px-3 py-1.5 bg-black/40 border border-white/10 text-sm hover:border-white/30 transition-colors">
                       {skill}
                     </span>
                   ))}
@@ -271,11 +301,11 @@ const ExperienceSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {jewelrySkills.map((category, idx) => (
-              <div key={idx} className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+              <div key={idx} className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
                 <h3 className="text-lg font-bold mb-4 text-white/80">{category.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
-                    <span key={i} className="px-2 py-1 bg-white/5 border border-white/10 text-xs">
+                    <span key={i} className="px-2 py-1 bg-black/40 border border-white/10 text-xs">
                       {skill}
                     </span>
                   ))}
@@ -297,10 +327,10 @@ const ExperienceSection = () => {
             Videography & Motion Graphics
           </h2>
           
-          <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+          <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
             <div className="flex flex-wrap gap-2">
               {videoSkills.map((skill, i) => (
-                <span key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 text-sm hover:border-white/30 transition-colors">
+                <span key={i} className="px-3 py-1.5 bg-black/40 border border-white/10 text-sm hover:border-white/30 transition-colors">
                   {skill}
                 </span>
               ))}
@@ -321,48 +351,48 @@ const ExperienceSection = () => {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+            <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
               <h3 className="text-xl font-bold mb-4 text-white/80">Backend</h3>
               <div className="flex flex-wrap gap-2 mb-6">
                 {backendSkills.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-sm">{skill}</span>
+                  <span key={i} className="px-3 py-1 bg-black/40 border border-white/10 text-sm">{skill}</span>
                 ))}
               </div>
               
               <h3 className="text-xl font-bold mb-4 text-white/80">Databases</h3>
               <div className="flex flex-wrap gap-2 mb-6">
                 {databaseSkills.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-sm">{skill}</span>
+                  <span key={i} className="px-3 py-1 bg-black/40 border border-white/10 text-sm">{skill}</span>
                 ))}
               </div>
               
               <h3 className="text-xl font-bold mb-4 text-white/80">DevOps & Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {devopsSkills.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-sm">{skill}</span>
+                  <span key={i} className="px-3 py-1 bg-black/40 border border-white/10 text-sm">{skill}</span>
                 ))}
               </div>
             </div>
             
-            <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+            <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
               <h3 className="text-xl font-bold mb-4 text-white/80">Frontend</h3>
               <div className="flex flex-wrap gap-2 mb-6">
                 {frontendSkills.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-sm">{skill}</span>
+                  <span key={i} className="px-3 py-1 bg-black/40 border border-white/10 text-sm">{skill}</span>
                 ))}
               </div>
               
               <h3 className="text-xl font-bold mb-4 text-white/80">Methodologies</h3>
               <div className="flex flex-wrap gap-2">
                 {methodologies.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-sm">{skill}</span>
+                  <span key={i} className="px-3 py-1 bg-black/40 border border-white/10 text-sm">{skill}</span>
                 ))}
               </div>
             </div>
           </div>
           
           {/* Final Project Highlight */}
-          <div className="mt-8 p-6 border border-white/20 bg-black/80 backdrop-blur-sm relative z-20">
+          <div className="mt-8 p-6 border border-white/20 bg-white/5 backdrop-blur-sm">
             <h3 className="text-lg font-bold mb-2">Final Project: E-Commerce Platform for Voidstone Studio</h3>
             <p className="text-gray-400 text-sm">
               Developed a full microservice-based e-commerce platform for my fashion brand, combining my two passions. 
@@ -384,7 +414,7 @@ const ExperienceSection = () => {
             Additional Competencies
           </h2>
           
-          <div className="bg-black/80 backdrop-blur-sm p-6 border border-white/10 relative z-20">
+          <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
             <div className="flex flex-wrap gap-3">
               {additionalSkills.map((skill, i) => (
                 <span key={i} className="px-4 py-2 border border-white/20 text-sm hover:border-white/60 transition-colors">
@@ -414,7 +444,7 @@ const ExperienceSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-black/80 backdrop-blur-sm p-4 border border-white/10 text-center hover:border-white/30 transition-colors relative z-20"
+                className="bg-white/5 backdrop-blur-sm p-4 border border-white/10 text-center hover:border-white/30 transition-colors"
               >
                 <div className="text-2xl mb-2">{lang.flag}</div>
                 <h3 className="font-bold">{lang.name}</h3>

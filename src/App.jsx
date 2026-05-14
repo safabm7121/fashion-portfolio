@@ -10,6 +10,8 @@ import './components/Dock/Dock.css';
 import ExperienceDetail from './pages/ExperienceDetail';
 import SplashCursor from './components/SplashCursor/SplashCursor';
 
+import './components/Lanyard3D';
+
 // Back to Top Button Component
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
