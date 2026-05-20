@@ -10,46 +10,45 @@ const Contact = () => {
   const [status, setStatus] = useState({ type: '', message: '' })
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setStatus({ type: '', message: '' })
+ const handleSubmit = async (e) => {
+  e.preventDefault()
+  setLoading(true)
+  setStatus({ type: '', message: '' })
 
-    try {
-      const response = await fetch('https://formsubmit.co/safabenmiledd@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `Portfolio Inquiry from ${formData.name}`,
-          _template: 'table',
-          _captcha: 'false'
-        })
+  try {
+    const response = await fetch('https://formspree.io/f/safabenmiledd@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        _subject: `Portfolio Inquiry from ${formData.name}`
       })
+    })
 
-      if (response.ok) {
-        setStatus({ 
-          type: 'success', 
-          message: 'Message sent successfully! I\'ll get back to you soon.' 
-        })
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        throw new Error('Failed to send')
-      }
-    } catch (error) {
+    if (response.ok) {
       setStatus({ 
-        type: 'error', 
-        message: 'Failed to send message. Please email me directly at safabenmiledd@gmail.com' 
+        type: 'success', 
+        message: '✓ Message sent successfully! I will get back to you soon.' 
       })
-    } finally {
-      setLoading(false)
+      setFormData({ name: '', email: '', message: '' })
+    } else {
+      throw new Error('Failed to send')
     }
+  } catch (error) {
+    setStatus({ 
+      type: 'error', 
+      message: '✗ Failed to send. Please email me directly at safabenmiledd@gmail.com' 
+    })
+  } finally {
+    setLoading(false)
+    setTimeout(() => setStatus({ type: '', message: '' }), 5000)
   }
+}
 
   const handleChange = (e) => {
     setFormData({

@@ -8,16 +8,16 @@ const Hobbies = () => {
 
   // All hobby images in one array (Pinterest style)
   const hobbyImages = [
-    { url: "/hobbies/1.jpeg", caption: "singing" },
-    { url: "/hobbies/2.jpeg", caption: "3d doll making after i modeled it in nomad sculpt" },
-    { url: "/hobbies/3.jpeg", caption: "chess" },
-    { url: "/hobbies/4.jpeg", caption: "drums" },
-    { url: "/hobbies/5.jpeg", caption: "guitar by the beach under the sunset" },
-    { url: "/hobbies/6.jpeg", caption: "training daily is a form of self-care" },
-    { url: "/hobbies/7.jpeg", caption: "music sheets in class" },
-    { url: "/hobbies/8.jpeg", caption: "core childhood memory" },
-    { url: "/hobbies/9.jpeg", caption: "wood carving" },
-    { url: "/hobbies/10.jpeg", caption: "clay modeling" }
+    { url: "https://i.postimg.cc/T3ktMMR8/1.jpg", caption: "singing" },
+    { url: "https://i.postimg.cc/Bnhm99q3/2.jpg", caption: "3d doll making after i modeled it in nomad sculpt" },
+    { url: "https://i.postimg.cc/nhd3bbHf/3.jpg", caption: "chess" },
+    { url: "https://i.postimg.cc/FHFTBsQN/4.jpg", caption: "drums" },
+    { url: "https://i.postimg.cc/x1s6DD9W/5.jpg", caption: "guitar by the beach under the sunset" },
+    { url: "https://i.postimg.cc/FHPT5594/6.jpg", caption: "training daily is a form of self-care" },
+    { url: "https://i.postimg.cc/htC2WWSK/7.jpg", caption: "music sheets in class" },
+    { url: "https://i.postimg.cc/9frJc8MJ/8.jpg", caption: "core childhood memory" },
+    { url: "https://i.postimg.cc/g0nNGSJS/9.jpg", caption: "wood carving" },
+    { url: "https://i.postimg.cc/TPpCT7wk/10.jpg", caption: "clay modeling" }
   ]
 
   const openLightbox = (index) => {
