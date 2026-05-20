@@ -2,7 +2,7 @@ import React, { Suspense, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Lanyard3D from '../../components/Lanyard3D'
-
+import Folder from '../Folder/Folder'
 const ExperienceSection = () => {
   const [isMobile, setIsMobile] = useState(false)
 
@@ -157,22 +157,37 @@ const ExperienceSection = () => {
               </p>
             </div>
 
-            {/* Right side - Lanyard3D */}
-            <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
-              <Suspense fallback={
-                <div className="w-full h-full flex items-center justify-center bg-black/40 rounded-2xl">
-                  <div className="text-center">
-                    <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-white/60 text-sm">Loading 3D Card...</p>
-                  </div>
-                </div>
-              }>
-                <Lanyard3D 
-                  position={[0, 0, isMobile ? 25 : 20]} 
-                  gravity={[0, -40, 0]} 
-                />
-              </Suspense>
-            </div>
+          
+          {/* Right side - Lanyard3D with Folder as navigation */}
+<div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+  {/* Folder Button - Click to navigate to hobbies page */}
+  <div 
+    className="absolute top-4 right-4 z-20 cursor-pointer flex flex-col items-center group"
+    onClick={() => window.location.href = '/hobbies'}
+  >
+    <Folder 
+      color="#ffe9c7" 
+      size={1.2}
+    />
+    <span className="text-white/40 text-[14px] tracking-wider uppercase mt-2 group-hover:text-white/70 transition-colors">
+      PASSIONS & HOBBIES
+    </span>
+  </div>
+  
+  <Suspense fallback={
+    <div className="w-full h-full flex items-center justify-center bg-black/40 rounded-2xl">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-white/60 text-sm">Loading 3D Card...</p>
+      </div>
+    </div>
+  }>
+    <Lanyard3D 
+      position={[0, 0, isMobile ? 25 : 20]} 
+      gravity={[0, -40, 0]} 
+    />
+  </Suspense>
+</div>
           </div>
         </motion.div>
 

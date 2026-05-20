@@ -9,6 +9,7 @@ import { HiHome, HiUser, HiFolder, HiMail } from 'react-icons/hi';
 import './components/Dock/Dock.css';
 import ExperienceDetail from './pages/ExperienceDetail';
 import SplashCursor from './components/SplashCursor/SplashCursor';
+import Hobbies from './pages/Hobbies'
 
 import './components/Lanyard3D';
 
@@ -194,6 +195,7 @@ const AppWithDock = () => {
         <Route path="/" element={<Home />} />
         <Route path="/experience/:id" element={<ExperienceDetail />} />
         <Route path="/project/:slug" element={<Project />} />
+        <Route path="/hobbies" element={<Hobbies />} />
       </Routes>
     </>
   );

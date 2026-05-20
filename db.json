@@ -387,17 +387,49 @@
           "type": "image",
           "url": "/public/projects/project-4/10.png",
           "caption": "page 10"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-4/11.png",
+          "caption": "page 11"
+        },
+         {
+          "type": "image",
+          "url": "/public/projects/project-4/12.png",
+          "caption": "page 12"
+        },
+          {
+            "type": "image",
+            "url": "/public/projects/project-4/13.png",
+            "caption": "page 13"
+          },
+          {
+            "type": "image",
+            "url": "/public/projects/project-4/14.png",
+            "caption": "page 14"
+          },
+          {
+            "type": "image",
+            "url": "/public/projects/project-4/15.png",
+            "caption": "page 15"
+          },
+           {
+          "type": "image",
+          "url": "/public/projects/project-4/16.png",
+          "caption": "page 10"
         }
+    
     
     
       ],
   
-      "category": "womenswear COLLECTION",
-      "year": "2025",
-      "materials": ["silk", "lace", "recycled fabrics", "tartan"],
+      "category": "illustrations COLLECTION",
+      "year": "2023 - 2026",
+      "materials": ["Proceate", "oil painting", "ADOBE", "clip studio"],
       "client": "voidstone studio",
-      "role": "FASHION DESIGNER & brand owner"
+      "role": "ARTIST & illustrator"
     }
+   
     
   ]
 }

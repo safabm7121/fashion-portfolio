@@ -39,11 +39,11 @@
     background-clip: text;
     color: transparent;
   }
-  
+
   .text-glow-white {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
-  
+
   .border-glow-white {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
@@ -226,17 +226,22 @@ body {
   .back-to-top {
     right: 16px !important;
   }
-  
+
   .theme-toggle {
     bottom: 80px !important;
   }
-  
+
   .back-to-top {
     bottom: 140px !important;
   }
 }
 .SplashCursor {
- 
+
+}
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none !important;
 }
 .lanyard-wrapper {
   position: relative;

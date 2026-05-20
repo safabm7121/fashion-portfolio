@@ -8,6 +8,10 @@ const Project = () => {
   const navigate = useNavigate()
   const [project, setProject] = useState(null)
   const [loading, setLoading] = useState(true)
+  
+  // Lightbox state
+  const [lightboxImage, setLightboxImage] = useState(null)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
 
   useEffect(() => {
     const foundProject = projectsData.projects.find(p => p.slug === slug)
@@ -19,6 +23,43 @@ const Project = () => {
       navigate('/')
     }
   }, [slug, navigate])
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!lightboxImage) return
+      if (e.key === 'ArrowRight') nextImage()
+      if (e.key === 'ArrowLeft') prevImage()
+      if (e.key === 'Escape') closeLightbox()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [lightboxImage, lightboxIndex])
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index)
+    setLightboxImage(project.gallery[index])
+  }
+
+  const closeLightbox = () => {
+    setLightboxImage(null)
+  }
+
+  const nextImage = () => {
+    if (lightboxIndex < project.gallery.length - 1) {
+      const newIndex = lightboxIndex + 1
+      setLightboxIndex(newIndex)
+      setLightboxImage(project.gallery[newIndex])
+    }
+  }
+
+  const prevImage = () => {
+    if (lightboxIndex > 0) {
+      const newIndex = lightboxIndex - 1
+      setLightboxIndex(newIndex)
+      setLightboxImage(project.gallery[newIndex])
+    }
+  }
 
   // Function to determine file type from URL
   const getFileType = (url) => {
@@ -206,18 +247,18 @@ const Project = () => {
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-40 p-4 md:p-6 bg-black/90 backdrop-blur-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
-         <button 
-  onClick={() => {
-    window.scrollTo(0, 0)
-    navigate('/')
-  }} 
-  className="inline-flex items-center gap-1 md:gap-2 text-white/80 hover:text-white transition-colors group interactive text-sm md:text-base"
->
-  <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-  </svg>
-  BACK TO HOME
-</button>
+          <button 
+            onClick={() => {
+              window.scrollTo(0, 0)
+              navigate('/')
+            }} 
+            className="inline-flex items-center gap-1 md:gap-2 text-white/80 hover:text-white transition-colors group interactive text-sm md:text-base"
+          >
+            <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            BACK TO HOME
+          </button>
           
           <a 
             href="https://www.voidstonestudio.com" 
@@ -291,9 +332,84 @@ const Project = () => {
               <h2 className="text-2xl md:text-3xl font-display mb-6 md:mb-8 border-b border-white/20 pb-3 md:pb-4 relative z-10 text-white">
                 PROJECT GALLERY
               </h2>
-              <div className="space-y-8 md:space-y-12">
-                {project.gallery.map((item, index) => renderGalleryItem(item, index))}
-              </div>
+              
+              {/* Special Pinterest-style masonry layout for illustrations project WITH LIGHTBOX */}
+              {project.slug === "art book" ? (
+                <>
+                  <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                    {project.gallery.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: Math.min(index * 0.03, 0.5) }}
+                        className="break-inside-avoid mb-4 relative z-0 cursor-pointer"
+                        onClick={() => openLightbox(index)}
+                      >
+                        <img 
+                          src={item.url}
+                          alt={item.caption}
+                          className="w-full h-auto object-cover hover:opacity-90 transition-opacity rounded-lg"
+                        />
+                        {item.caption && (
+                          <p className="text-gray-500 text-xs text-center mt-2 tracking-wide">
+                            {item.caption}
+                          </p>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Lightbox Modal */}
+                  {lightboxImage && (
+                    <div 
+                      className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+                      onClick={closeLightbox}
+                    >
+                      <button 
+                        className="absolute top-4 right-4 text-white text-4xl hover:text-white/70 transition-colors z-10"
+                        onClick={closeLightbox}
+                      >
+                        ✕
+                      </button>
+                      
+                      <button 
+                        className="absolute left-4 text-white text-4xl hover:text-white/70 transition-colors z-10 disabled:opacity-30"
+                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                        disabled={lightboxIndex === 0}
+                      >
+                        ‹
+                      </button>
+                      
+                      <img 
+                        src={lightboxImage.url}
+                        alt={lightboxImage.caption}
+                        className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      
+                      <button 
+                        className="absolute right-4 text-white text-4xl hover:text-white/70 transition-colors z-10 disabled:opacity-30"
+                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                        disabled={lightboxIndex === project.gallery.length - 1}
+                      >
+                        ›
+                      </button>
+                      
+                      {lightboxImage.caption && (
+                        <div className="absolute bottom-4 left-0 right-0 text-center text-white/70 text-sm">
+                          {lightboxImage.caption}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="space-y-8 md:space-y-12">
+                  {project.gallery.map((item, index) => renderGalleryItem(item, index))}
+                </div>
+              )}
             </div>
           )}
 
@@ -373,11 +489,23 @@ const Project = () => {
           <div className="border-t border-white/20 pt-8 md:pt-12 text-center relative z-10">
             <h3 className="text-xl md:text-2xl font-display mb-3 md:mb-4 text-white">Interested in this project?</h3>
             <p className="text-gray-400 text-sm md:text-base mb-6 md:mb-8">Let's collaborate on your next creative endeavor</p>
-            <Link to="/#contact">
-              <button className="px-8 md:px-12 py-3 md:py-4 bg-white text-black font-bold hover:bg-white/90 transition-colors interactive text-sm md:text-base">
-                INQUIRE ABOUT THIS PROJECT
-              </button>
-            </Link>
+            <button 
+              onClick={() => {
+                if (window.location.pathname !== '/') {
+                  navigate('/')
+                  setTimeout(() => {
+                    const contactSection = document.getElementById('contact')
+                    if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' })
+                  }, 100)
+                } else {
+                  const contactSection = document.getElementById('contact')
+                  if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="px-8 md:px-12 py-3 md:py-4 bg-white text-black font-bold hover:bg-white/90 transition-colors interactive text-sm md:text-base"
+            >
+              INQUIRE ABOUT THIS PROJECT
+            </button>
           </div>
         </div>
       </div>

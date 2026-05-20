@@ -111,7 +111,7 @@ const Hero = ({ scrollToProjects }) => {
             >
               <div className="relative w-full max-w-xs md:max-w-sm">
                 <img 
-                  src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJkMHAyd3U4em02OWZqN3o0YzFicjdwazgyZzYxeDg1ejUwYjlhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q3kkMWLhrCPjhbjscB/giphy.gif"
+                  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHFnOG9jZ2kwczY5N2E4YzVqenNsc3FmNHR6OWwwNDNub2V2YTBnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jL4LUXai14QHm/giphy.gif"
                   alt="Fashion animation"
                   className="w-full h-auto rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-500"
                 />
