@@ -46,7 +46,7 @@ const Hero = ({ scrollToProjects }) => {
               <motion.div variants={itemVariants}>
                 <div className="overflow-hidden">
                   <span className="text-white/50 text-xs tracking-[0.3em] uppercase font-mono inline-block">
-                    Fashion Designer / Full Stack Developer
+                    Fashion Designer / Website Developer
                   </span>
                 </div>
               </motion.div>
@@ -66,8 +66,8 @@ const Hero = ({ scrollToProjects }) => {
               
               <motion.div variants={itemVariants} className="max-w-xl pt-2 mx-auto lg:mx-0">
                 <p className="text-gray-300 text-xs md:text-sm leading-relaxed border-l-2 border-white/30 pl-4">
-                  ESMOD-trained designer specializing in womenswear, menswear, and costume design. 
-                  Blending avant-garde aesthetics with technical craftsmanship.
+                  ESMOD international graduate specializing in womenswear, menswear, and costume design. 
+                  Blending avant garde aesthetics with technical craftsmanship.
                 </p>
               </motion.div>
               
@@ -88,7 +88,7 @@ const Hero = ({ scrollToProjects }) => {
                 </motion.button>
                 
                 <motion.a 
-                  href="https://www.voidstonestudio.com"
+                  href="https://store.voidstonestudio.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   variants={itemVariants}
@@ -152,7 +152,7 @@ const Hero = ({ scrollToProjects }) => {
       {/* Credit */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-center whitespace-nowrap">
         <p className="text-white/20 text-[7px] tracking-wider font-mono">
-          PORTFOLIO CRAFTED BY SAFA BEN MILED
+          PORTFOLIO CRAFTED AND CODED BY SAFA BEN MILED
         </p>
       </div>
     </section>

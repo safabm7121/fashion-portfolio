@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Lanyard3D from '../../components/Lanyard3D'
 import Folder from '../Folder/Folder'
+
 const ExperienceSection = () => {
   const [isMobile, setIsMobile] = useState(false)
 
@@ -25,7 +26,7 @@ const ExperienceSection = () => {
       id: "ofla-turki",
       title: "Creative Designer",
       company: "Ofla Turki",
-      period: "Jan 2024 – Jun 2024",
+      period: "Jun 2023 – Dec 2023 & Freelance 2026",
       description: "Led end-to-end development of multiple top-selling collections. Oversaw design process from concept to final production, managing cross-functional teams and supplier relationships."
     },
     {
@@ -41,6 +42,20 @@ const ExperienceSection = () => {
       company: "Various Projects",
       period: "2025 – Present",
       description: "Custom costume design for theatrical productions, drag performances, and private commissions. First Prize winner - National Drag Competition."
+    },
+    {
+      id: "vivienne westwood",
+      title: "vivienne westwood Backstage Organizer",
+      company: "Vivienne Westwood Archive Fashion Show",
+      period: " NOVEMBER 2024",
+      description: "Honored to participate in the Vivienne Westwood fashion show backstage, dressing and managing models, ironing archive garments, and organizing accessories."
+    },
+    {
+      id: "voidstone-paris-fashion-week",
+      title: "voidstone PARIS fashion week 2025 ",
+      company: "VOIDSTONE STUDIO",
+      period: " 2025",
+      description: "Participated in Paris Fashion Week 2025, showcasing the VOIDSTONE STUDIO collection. Managed all aspects of the show, including model coordination, backstage organization, and presentation of alternative designs, through pretty talent academy. "
     }
   ]
 
@@ -140,54 +155,49 @@ const ExperienceSection = () => {
                 <span className="text-white/80">& Full Stack Developer</span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                Hi, I'm Safa Ben Miled, a junior full-stack developer certified by GoMyCode, 
-                currently in the middle of a career change that combines my two passions.
+                Hi, I'm Safa! , a fashion designer graduated from esmod international, 
+                currently working on developing my own fashion brand, voidstone studio, developping and sharing my own knowledge in the fashion industry.
               </p>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                It all started after my fashion degree at ESMOD International and my 3 years 
-                of experience in the fashion industry. When I wanted to create my own website 
-                to showcase my work, I realized I didn't master that aspect at all. So I got 
-                certified in tech—and discovered a real passion for development.
+                it all started with a passion for fashion and a desire to create unique, avant garde/alternative designs.
               </p>
               <p className="text-gray-400 text-lg leading-relaxed">
-                My unconventional background is my strength: fashion taught me attention to 
-                detail, creativity, and a real understanding of user experience. Today, I apply 
-                that to web development to create applications that are both functional and 
-                aesthetically pleasing.
+                I'm interested in pushing materials beyond their usual context, creating garments that challenge how they sit on the body and how they're perceived. 
+                I'm a multidisciplinary creative drawn to experimentation, the avant garde, and the construction of visual universes. My work stems from exploring the intersections of fashion, art, technology, performance, and contemporary culture, transforming concepts into experiences that defy expectations. Through research, conceptual development, and creative direction, I build narratives in which fashion becomes a medium for expression, provocation, and transformation.
               </p>
             </div>
 
           
           {/* Right side - Lanyard3D with Folder as navigation */}
-<div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
-  {/* Folder Button - Click to navigate to hobbies page */}
-  <div 
-    className="absolute top-4 right-4 z-20 cursor-pointer flex flex-col items-center group"
-    onClick={() => window.location.href = '/hobbies'}
-  >
-    <Folder 
-      color="#ffe9c7" 
-      size={1.2}
-    />
-    <span className="text-white/40 text-[14px] tracking-wider uppercase mt-2 group-hover:text-white/70 transition-colors">
-      PASSIONS & HOBBIES
-    </span>
-  </div>
-  
-  <Suspense fallback={
-    <div className="w-full h-full flex items-center justify-center bg-black/40 rounded-2xl">
-      <div className="text-center">
-        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-white/60 text-sm">Loading 3D Card...</p>
-      </div>
-    </div>
-  }>
-    <Lanyard3D 
-      position={[0, 0, isMobile ? 25 : 20]} 
-      gravity={[0, -40, 0]} 
-    />
-  </Suspense>
-</div>
+          <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+            {/* Folder Button - Click to navigate to hobbies page */}
+            <div 
+              className="absolute top-4 right-4 z-20 cursor-pointer flex flex-col items-center group"
+              onClick={() => window.location.href = '/hobbies'}
+            >
+              <Folder 
+                color="#ffe9c7" 
+                size={1.2}
+              />
+              <span className="text-white/40 text-[14px] tracking-wider uppercase mt-2 group-hover:text-white/70 transition-colors">
+                PASSIONS & HOBBIES
+              </span>
+            </div>
+            
+            <Suspense fallback={
+              <div className="w-full h-full flex items-center justify-center bg-black/40 rounded-2xl">
+                <div className="text-center">
+                  <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-white/60 text-sm">Loading 3D Card...</p>
+                </div>
+              </div>
+            }>
+              <Lanyard3D 
+                position={[0, 0, isMobile ? 25 : 20]} 
+                gravity={[0, -40, 0]} 
+              />
+            </Suspense>
+          </div>
           </div>
         </motion.div>
 
@@ -206,7 +216,7 @@ const ExperienceSection = () => {
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <Link
-                key={index}
+                key={exp.id}
                 to={`/experience/${exp.id}`}
                 className="block group cursor-pointer"
               >
