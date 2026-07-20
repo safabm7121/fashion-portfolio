@@ -67,7 +67,7 @@ const ExperienceDetail = () => {
       title: "Illustrator & Concept Designer",
       company: "La Flamme",
       period: "Aug 2024 – Feb 2025",
-      location: "Remote",
+      location: "soukra, Tunisia",
       description: "Created concept illustrations and developed visual identity for brand collections.",
       fullDescription: "Worked remotely with La Flamme to develop their brand identity through illustrations and concept designs that captured their unique aesthetic. My role involved translating abstract ideas into visual concepts that could be realized in textile and garment form.",
       responsibilities: [

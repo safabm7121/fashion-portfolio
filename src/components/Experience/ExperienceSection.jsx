@@ -33,7 +33,7 @@ const ExperienceSection = () => {
       id: "la-flamme",
       title: "Illustrator & Concept Designer",
       company: "La Flamme",
-      period: "Aug 2024 – Feb 2025",
+      period: "juin 2024 – Feb 2025",
       description: "Created concept illustrations and developed visual identity for brand collections. Collaborated on marketing materials, lookbooks, and brand storytelling."
     },
     {
@@ -44,7 +44,7 @@ const ExperienceSection = () => {
       description: "Custom costume design for theatrical productions, drag performances, and private commissions. First Prize winner - National Drag Competition."
     },
     {
-      id: "vivienne westwood",
+      id: "vivienne-westwood",
       title: "vivienne westwood Backstage Organizer",
       company: "Vivienne Westwood Archive Fashion Show",
       period: " NOVEMBER 2024",
